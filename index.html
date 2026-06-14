@@ -20,7 +20,7 @@
         .mobile-wrapper {
             width: 100%;
             max-width: 480px;
-            margin: 0 auto; /* Centrado sin flexbox para evitar que se comprima */
+            margin: 0 auto;
             background-color: #e8ede8;
             position: relative;
             box-shadow: 0 0 30px rgba(0,0,0,0.3);
@@ -54,7 +54,7 @@
         .img-pareja {
             width: 100%;
             height: auto;
-            aspect-ratio: 4 / 5; /* Evita que la foto se apachurre */
+            aspect-ratio: 4 / 5;
             object-fit: cover;
             border-radius: 10px 10px 0 0;
             box-shadow: 0 -5px 15px rgba(0,0,0,0.05);
@@ -104,32 +104,44 @@
             pointer-events: none;
             opacity: 0.6;
         }
+        
+        /* SELLO GENERADO CON CSS */
         .seal {
             position: absolute;
-            top: -45px;
+            top: -40px;
             left: 50%;
             transform: translateX(-50%);
             width: 80px;
             height: 80px;
-            background: radial-gradient(circle, #f4ece8, #e3d5cd);
-            background-image: url('fotos/sello.png');
-            background-size: cover;
-            background-position: center;
+            background: radial-gradient(circle at 30% 30%, #fdfbf7, #e3d5cd 70%, #d4c4bc);
             border-radius: 50%;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            box-shadow: 
+                0 5px 10px rgba(0,0,0,0.15), 
+                inset 0 -3px 6px rgba(0,0,0,0.1), 
+                inset 0 3px 6px rgba(255,255,255,0.8);
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 2px solid #c5a059;
+            border: 1px solid #d4c4bc;
+        }
+        .seal::before {
+            content: '';
+            position: absolute;
+            width: 62px;
+            height: 62px;
+            border-radius: 50%;
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.08);
         }
         .seal::after {
             content: '❀';
-            font-size: 30px;
-            color: #c5a059;
-            position: absolute;
-            z-index: -1;
-            opacity: 0.5;
+            font-size: 35px;
+            color: #d4c4bc;
+            text-shadow: -1px -1px 1px rgba(0,0,0,0.1), 1px 1px 1px rgba(255,255,255,0.8);
+            position: relative;
+            z-index: 1;
         }
+
         .invite-text {
             font-size: 1.1em;
             letter-spacing: 2px;
@@ -211,7 +223,7 @@
         <div class="top-section">
             <h1 class="monogram">JJ</h1>
             <p class="quote">"Siempre tuyo, siempre mía, siempre nuestros."<br>Ludwig van Beethoven</p>
-            <img src="fotos/pareja.png" alt="Jazmin y Jose" class="img-pareja" onerror="this.style.display='none'">
+            <img src="fotos/pareja.jpg" alt="Jazmin y Jose" class="img-pareja" onerror="this.style.display='none'">
         </div>
 
         <div class="css-envelope"></div>
