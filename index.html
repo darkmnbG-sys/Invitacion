@@ -48,7 +48,6 @@
             display: block;
             object-fit: cover;
         }
-        /* Sobre creado con CSS para no depender de imágenes */
         .css-envelope {
             position: relative;
             width: 100%;
@@ -146,13 +145,30 @@
         .countdown-numbers { font-size: 3.2em; font-family: sans-serif; font-weight: 300; letter-spacing: 2px; margin-bottom: 10px; }
         .countdown-labels { display: flex; justify-content: center; gap: 20px; font-size: 0.65em; letter-spacing: 1px; font-family: sans-serif; }
         .btn { display: inline-block; background-color: #c4cdc4; color: #1a1a1a; text-decoration: none; padding: 15px 30px; border-radius: 25px; font-size: 1.1em; letter-spacing: 1px; margin-top: 40px; }
+        
+        /* Estilos de la galería */
+        .gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            padding: 0 20px;
+            margin-top: 40px;
+        }
+        .gallery img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
         .footer-img { width: 100%; display: block; margin-top: 40px; min-height: 100px; }
     </style>
 </head>
 <body>
     <div class="mobile-wrapper">
         <div class="top-section">
-            <h1 class="monogram">DS</h1>
+            <h1 class="monogram">JJ</h1>
             <p class="quote">"Siempre tuyo, siempre mía, siempre nuestros." Ludwig van Beethoven</p>
             <img src="fotos/pareja.png" alt="Jazmin y Jose" class="img-pareja" onerror="this.style.display='none'">
         </div>
@@ -199,6 +215,14 @@
             </div>
         </div>
 
+        <!-- Mini Galería -->
+        <div class="gallery">
+            <img src="fotos/foto1.jpg" alt="Foto 1" onerror="this.style.display='none'">
+            <img src="fotos/foto2.jpg" alt="Foto 2" onerror="this.style.display='none'">
+            <img src="fotos/foto3.jpg" alt="Foto 3" onerror="this.style.display='none'">
+            <img src="fotos/foto4.jpg" alt="Foto 4" onerror="this.style.display='none'">
+        </div>
+
         <img src="fotos/footer.jpg" alt="Footer" class="footer-img" onerror="this.style.display='none'">
     </div>
 
@@ -218,7 +242,7 @@
             }
         });
 
-        const targetDate = new Date("2026-10-03T20:30:00").getTime();
+        const targetDate = new Date("2026/10/03 20:30:00").getTime();
 
         function pad(n) { return (n < 10 ? '0' : '') + n; }
 
