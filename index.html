@@ -10,16 +10,26 @@
     <style>
         body {
             margin: 0;
-            background-color: #c4cdc4; /* Fondo verde salvia */
-            background-image: url('fotos/fondo-textura.jpg'); /* Opcional si tienes textura */
-            background-size: cover;
+            background-color: #b5c1b5;
             font-family: 'Cormorant Garamond', serif;
             color: #1a1a1a;
+            display: flex;
+            justify-content: center;
+        }
+        .mobile-wrapper {
+            width: 100%;
+            max-width: 450px;
+            background-color: #c4cdc4;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0,0,0,0.15);
+            overflow: hidden;
         }
         .top-section {
             background-color: #fdfbf7;
             padding: 40px 20px 0;
             text-align: center;
+            position: relative;
+            z-index: 2;
         }
         .monogram {
             font-size: 4.5em;
@@ -30,37 +40,43 @@
         .quote {
             font-style: italic;
             font-size: 1.4em;
-            max-width: 400px;
             margin: 20px auto 30px;
         }
         .img-pareja {
             width: 100%;
-            max-width: 500px;
+            min-height: 200px;
             display: block;
-            margin: 0 auto;
-            /* Para el efecto de papel rasgado, lo ideal es que la imagen pareja.png ya tenga ese corte transparente */
+            object-fit: cover;
         }
-        .img-sobre {
-            width: 100%;
-            max-width: 500px;
-            display: block;
-            margin: -30px auto 0;
+        /* Sobre creado con CSS para no depender de imágenes */
+        .css-envelope {
             position: relative;
+            width: 100%;
+            height: 180px;
+            background-color: #8da47e;
             z-index: 1;
+            margin-top: -10px;
+        }
+        .css-envelope::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #9eb58e;
+            clip-path: polygon(0 0, 50% 55%, 100% 0);
         }
         .card-container {
             position: relative;
-            max-width: 420px;
-            margin: -80px auto 0;
-            z-index: 2;
-            padding: 0 20px;
-            box-sizing: border-box;
+            margin: -120px 20px 0;
+            z-index: 3;
         }
         .card {
             background-color: #fdfbf7;
             padding: 60px 20px 40px;
             text-align: center;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             position: relative;
         }
         .seal {
@@ -70,12 +86,22 @@
             transform: translateX(-50%);
             width: 80px;
             height: 80px;
+            background-color: #f4ece8;
             background-image: url('fotos/sello.png');
             background-size: cover;
             background-position: center;
-            background-color: #f4ece8;
             border-radius: 50%;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .seal::after {
+            content: '❀';
+            font-size: 30px;
+            color: #d4c4bc;
+            position: absolute;
+            z-index: -1;
         }
         .invite-text {
             font-size: 1.1em;
@@ -110,133 +136,71 @@
         .date-center .month { font-size: 0.9em; letter-spacing: 2px; }
         .date-center .day-num { font-size: 2.5em; line-height: 1; margin: 5px 0; }
         .date-center .year { font-size: 0.9em; letter-spacing: 2px; }
-        .player {
-            margin-bottom: 50px;
-        }
-        .player p {
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-            font-size: 1.1em;
-        }
-        .progress-bar {
-            width: 70%;
-            height: 2px;
-            background: #1a1a1a;
-            margin: 0 auto 20px;
-            position: relative;
-        }
-        .progress-bar::after {
-            content: '';
-            position: absolute;
-            left: 20%;
-            top: -4px;
-            width: 10px;
-            height: 10px;
-            background: #1a1a1a;
-            border-radius: 50%;
-        }
-        .controls {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 25px;
-            font-size: 1.2em;
-        }
-        .play-btn {
-            font-size: 2.2em;
-            cursor: pointer;
-        }
-        .countdown-title {
-            font-family: 'Pinyon Script', cursive;
-            font-size: 3.5em;
-            margin-bottom: 15px;
-        }
-        .countdown-numbers {
-            font-size: 3.5em;
-            font-family: sans-serif;
-            font-weight: 300;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
-        .countdown-labels {
-            display: flex;
-            justify-content: center;
-            gap: 22px;
-            font-size: 0.7em;
-            letter-spacing: 1px;
-            font-family: sans-serif;
-        }
-        .btn {
-            display: inline-block;
-            background-color: #c4cdc4;
-            color: #1a1a1a;
-            text-decoration: none;
-            padding: 15px 30px;
-            border-radius: 25px;
-            font-size: 1.1em;
-            letter-spacing: 1px;
-            margin-top: 40px;
-        }
-        .footer-img {
-            width: 100%;
-            display: block;
-            margin-top: 40px;
-        }
+        .player { margin-bottom: 50px; }
+        .player p { letter-spacing: 2px; margin-bottom: 15px; font-size: 1.1em; }
+        .progress-bar { width: 70%; height: 2px; background: #1a1a1a; margin: 0 auto 20px; position: relative; }
+        .progress-bar::after { content: ''; position: absolute; left: 20%; top: -4px; width: 10px; height: 10px; background: #1a1a1a; border-radius: 50%; }
+        .controls { display: flex; justify-content: center; align-items: center; gap: 25px; font-size: 1.2em; }
+        .play-btn { font-size: 2.2em; cursor: pointer; }
+        .countdown-title { font-family: 'Pinyon Script', cursive; font-size: 3.5em; margin-bottom: 15px; }
+        .countdown-numbers { font-size: 3.2em; font-family: sans-serif; font-weight: 300; letter-spacing: 2px; margin-bottom: 10px; }
+        .countdown-labels { display: flex; justify-content: center; gap: 20px; font-size: 0.65em; letter-spacing: 1px; font-family: sans-serif; }
+        .btn { display: inline-block; background-color: #c4cdc4; color: #1a1a1a; text-decoration: none; padding: 15px 30px; border-radius: 25px; font-size: 1.1em; letter-spacing: 1px; margin-top: 40px; }
+        .footer-img { width: 100%; display: block; margin-top: 40px; min-height: 100px; }
     </style>
 </head>
 <body>
-
-    <div class="top-section">
-        <h1 class="monogram">DS</h1>
-        <p class="quote">"Siempre tuyo, siempre mía, siempre nuestros." Ludwig van Beethoven</p>
-        <!-- Guarda tu foto con bordes rasgados como pareja.png -->
-        <img src="fotos/pareja.png" alt="Jazmin y Jose" class="img-pareja">
-    </div>
-
-    <!-- Guarda la imagen del sobre verde como sobre.png -->
-    <img src="fotos/sobre.png" alt="Sobre" class="img-sobre">
-
-    <div class="card-container">
-        <div class="card">
-            <div class="seal"></div>
-            
-            <div class="invite-text">Tenemos el honor de<br>invitarte a nuestra boda</div>
-            <div class="names">Jazmin & Jose</div>
-            
-            <div class="date-layout">
-                <div>VIERNES</div>
-                <div class="date-center">
-                    <span class="month">ENE</span>
-                    <span class="day-num">23</span>
-                    <span class="year">2026</span>
-                </div>
-                <div>1:00 P.M.</div>
-            </div>
-
-            <div class="player">
-                <p>DALE PLAY</p>
-                <div class="progress-bar"></div>
-                <div class="controls">
-                    <i class="fas fa-random"></i>
-                    <i class="fas fa-step-backward"></i>
-                    <i class="fas fa-play-circle play-btn" id="play-btn"></i>
-                    <i class="fas fa-step-forward"></i>
-                    <i class="fas fa-sync-alt"></i>
-                </div>
-                <audio id="bg-music" src="cancion.mp3"></audio>
-            </div>
-
-            <div class="countdown-title">Solo faltan</div>
-            <div class="countdown-numbers" id="timer">0:00:00:00</div>
-            <div class="countdown-labels">
-                <span>DÍAS</span><span>HORAS</span><span>MINUTOS</span><span>SEGUNDOS</span>
-            </div>
-
-            <a href="CAMBIAR_AQUI_TU_LINK_DE_GOOGLE_FORM" target="_blank" class="btn">CONFIRMAR ASISTENCIA</a>
+    <div class="mobile-wrapper">
+        <div class="top-section">
+            <h1 class="monogram">DS</h1>
+            <p class="quote">"Siempre tuyo, siempre mía, siempre nuestros." Ludwig van Beethoven</p>
+            <img src="fotos/pareja.png" alt="Jazmin y Jose" class="img-pareja" onerror="this.style.display='none'">
         </div>
-    </div>
 
-    <img src="fotos/footer.jpg" alt="Footer" class="footer-img">
+        <div class="css-envelope"></div>
+
+        <div class="card-container">
+            <div class="card">
+                <div class="seal"></div>
+                
+                <div class="invite-text">Tenemos el honor de<br>invitarte a nuestra boda</div>
+                <div class="names">Jazmin & Jose</div>
+                
+                <div class="date-layout">
+                    <div>SÁBADO</div>
+                    <div class="date-center">
+                        <span class="month">OCT</span>
+                        <span class="day-num">03</span>
+                        <span class="year">2026</span>
+                    </div>
+                    <div>8:30 P.M.</div>
+                </div>
+
+                <div class="player">
+                    <p>DALE PLAY</p>
+                    <div class="progress-bar"></div>
+                    <div class="controls">
+                        <i class="fas fa-random"></i>
+                        <i class="fas fa-step-backward"></i>
+                        <i class="fas fa-play-circle play-btn" id="play-btn"></i>
+                        <i class="fas fa-step-forward"></i>
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <audio id="bg-music" src="cancion.mp3"></audio>
+                </div>
+
+                <div class="countdown-title">Solo faltan</div>
+                <div class="countdown-numbers" id="timer">0:00:00:00</div>
+                <div class="countdown-labels">
+                    <span>DÍAS</span><span>HORAS</span><span>MINUTOS</span><span>SEGUNDOS</span>
+                </div>
+
+                <a href="CAMBIAR_AQUI_TU_LINK_DE_GOOGLE_FORM" target="_blank" class="btn">CONFIRMAR ASISTENCIA</a>
+            </div>
+        </div>
+
+        <img src="fotos/footer.jpg" alt="Footer" class="footer-img" onerror="this.style.display='none'">
+    </div>
 
     <script>
         const music = document.getElementById("bg-music");
@@ -254,17 +218,18 @@
             }
         });
 
-        const targetDate = new Date("Jan 23, 2026 13:00:00").getTime();
+        const targetDate = new Date("2026-10-03T20:30:00").getTime();
 
-        function pad(n) {
-            return (n < 10 ? '0' : '') + n;
-        }
+        function pad(n) { return (n < 10 ? '0' : '') + n; }
 
         setInterval(function() {
             const now = new Date().getTime();
             const distance = targetDate - now;
 
-            if (distance < 0) return;
+            if (distance < 0) {
+                document.getElementById("timer").innerText = "0:00:00:00";
+                return;
+            }
 
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
