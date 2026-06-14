@@ -5,183 +5,260 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex">
     <title>Boda Sandra & Dilan</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
-            background-color: #c8d5c8;
             margin: 0;
-            padding: 20px;
+            background-color: #c4cdc4; /* Fondo verde salvia */
+            background-image: url('fotos/fondo-textura.jpg'); /* Opcional si tienes textura */
+            background-size: cover;
             font-family: 'Cormorant Garamond', serif;
-            display: flex;
-            justify-content: center;
+            color: #1a1a1a;
         }
-        .card {
-            background: white;
+        .top-section {
+            background-color: #fdfbf7;
+            padding: 40px 20px 0;
+            text-align: center;
+        }
+        .monogram {
+            font-size: 4.5em;
+            margin: 0;
+            line-height: 1;
+            letter-spacing: -5px;
+        }
+        .quote {
+            font-style: italic;
+            font-size: 1.4em;
+            max-width: 400px;
+            margin: 20px auto 30px;
+        }
+        .img-pareja {
             width: 100%;
             max-width: 500px;
-            border-radius: 15px;
-            padding: 40px 20px 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            text-align: center;
+            display: block;
+            margin: 0 auto;
+            /* Para el efecto de papel rasgado, lo ideal es que la imagen pareja.png ya tenga ese corte transparente */
+        }
+        .img-sobre {
+            width: 100%;
+            max-width: 500px;
+            display: block;
+            margin: -30px auto 0;
             position: relative;
-            margin-top: 40px;
+            z-index: 1;
+        }
+        .card-container {
+            position: relative;
+            max-width: 420px;
+            margin: -80px auto 0;
+            z-index: 2;
+            padding: 0 20px;
             box-sizing: border-box;
+        }
+        .card {
+            background-color: #fdfbf7;
+            padding: 60px 20px 40px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            position: relative;
         }
         .seal {
             position: absolute;
-            top: -30px;
+            top: -40px;
             left: 50%;
             transform: translateX(-50%);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: #8b0000; /* Color de lacre por defecto si no hay imagen */
+            width: 80px;
+            height: 80px;
             background-image: url('fotos/sello.png');
             background-size: cover;
-        }
-        h1 {
-            font-size: 2.5em;
-            color: #333;
-            margin: 10px 0;
-        }
-        .date {
-            font-size: 1.2em;
-            letter-spacing: 2px;
-            color: #666;
-            margin-bottom: 30px;
-        }
-        .player-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-        .play-btn {
-            background: #c8d5c8;
-            border: none;
+            background-position: center;
+            background-color: #f4ece8;
             border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            cursor: pointer;
-            color: white;
-            font-size: 1.2em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-        .countdown-title {
-            font-size: 1.2em;
-            color: #666;
+        .invite-text {
+            font-size: 1.1em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             margin-bottom: 10px;
+            line-height: 1.4;
         }
-        .countdown {
+        .names {
+            font-family: 'Pinyon Script', cursive;
+            font-size: 4em;
+            margin: 10px 0 30px;
+            font-weight: normal;
+        }
+        .date-layout {
             display: flex;
             justify-content: center;
+            align-items: center;
             gap: 15px;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+            letter-spacing: 1px;
         }
-        .time-box {
+        .date-center {
             display: flex;
             flex-direction: column;
             align-items: center;
+            border-left: 1px solid #1a1a1a;
+            border-right: 1px solid #1a1a1a;
+            padding: 0 15px;
         }
-        .time-box span {
-            font-size: 1.8em;
-            font-weight: 600;
-            color: #333;
+        .date-center .month { font-size: 0.9em; letter-spacing: 2px; }
+        .date-center .day-num { font-size: 2.5em; line-height: 1; margin: 5px 0; }
+        .date-center .year { font-size: 0.9em; letter-spacing: 2px; }
+        .player {
+            margin-bottom: 50px;
         }
-        .time-box label {
-            font-size: 0.8em;
-            color: #666;
+        .player p {
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        .progress-bar {
+            width: 70%;
+            height: 2px;
+            background: #1a1a1a;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            left: 20%;
+            top: -4px;
+            width: 10px;
+            height: 10px;
+            background: #1a1a1a;
+            border-radius: 50%;
+        }
+        .controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            font-size: 1.2em;
+        }
+        .play-btn {
+            font-size: 2.2em;
+            cursor: pointer;
+        }
+        .countdown-title {
+            font-family: 'Pinyon Script', cursive;
+            font-size: 3.5em;
+            margin-bottom: 15px;
+        }
+        .countdown-numbers {
+            font-size: 3.5em;
+            font-family: sans-serif;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        .countdown-labels {
+            display: flex;
+            justify-content: center;
+            gap: 22px;
+            font-size: 0.7em;
+            letter-spacing: 1px;
+            font-family: sans-serif;
         }
         .btn {
             display: inline-block;
-            background-color: #c8d5c8;
-            color: white;
+            background-color: #c4cdc4;
+            color: #1a1a1a;
             text-decoration: none;
             padding: 15px 30px;
             border-radius: 25px;
             font-size: 1.1em;
             letter-spacing: 1px;
-            margin-bottom: 30px;
-            transition: background 0.3s;
+            margin-top: 40px;
         }
-        .gallery {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        .gallery img {
+        .footer-img {
             width: 100%;
-            height: auto;
-            border-radius: 8px;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-        }
-        .footer-photo {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
+            display: block;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
 
-    <div class="card">
-        <div class="seal"></div>
-        
-        <h1>Jazmin & Jose</h1>
-        <p class="date">Sabado OCT 03 2026 8:30 P.M.</p>
-
-        <div class="player-container">
-            <span>DALE PLAY</span>
-            <button class="play-btn" id="play-btn">
-                <i class="fas fa-play"></i>
-            </button>
-            <audio id="bg-music" src="cancion.mp3"></audio>
-        </div>
-
-        <div class="countdown-title">Solo faltan</div>
-        <div class="countdown">
-            <div class="time-box"><span id="days">00</span><label>DÍAS</label></div>
-            <div class="time-box"><span id="hours">00</span><label>HRS</label></div>
-            <div class="time-box"><span id="minutes">00</span><label>MIN</label></div>
-            <div class="time-box"><span id="seconds">00</span><label>SEG</label></div>
-        </div>
-
-        <a href="CAMBIAR_AQUI_TU_LINK_DE_GOOGLE_FORM" target="_blank" class="btn">CONFIRMAR ASISTENCIA</a>
-
-        <div class="gallery">
-            <img src="fotos/foto1.jpg" alt="Foto 1">
-            <img src="fotos/foto2.jpg" alt="Foto 2">
-            <img src="fotos/foto3.jpg" alt="Foto 3">
-            <img src="fotos/foto4.jpg" alt="Foto 4">
-        </div>
-
-        <img src="fotos/footer.jpg" alt="Footer" class="footer-photo">
+    <div class="top-section">
+        <h1 class="monogram">DS</h1>
+        <p class="quote">"Siempre tuyo, siempre mía, siempre nuestros." Ludwig van Beethoven</p>
+        <!-- Guarda tu foto con bordes rasgados como pareja.png -->
+        <img src="fotos/pareja.png" alt="Sandra y Dilan" class="img-pareja">
     </div>
+
+    <!-- Guarda la imagen del sobre verde como sobre.png -->
+    <img src="fotos/sobre.png" alt="Sobre" class="img-sobre">
+
+    <div class="card-container">
+        <div class="card">
+            <div class="seal"></div>
+            
+            <div class="invite-text">Tenemos el honor de<br>invitarte a nuestra boda</div>
+            <div class="names">Sandra & Dilan</div>
+            
+            <div class="date-layout">
+                <div>VIERNES</div>
+                <div class="date-center">
+                    <span class="month">ENE</span>
+                    <span class="day-num">23</span>
+                    <span class="year">2026</span>
+                </div>
+                <div>1:00 P.M.</div>
+            </div>
+
+            <div class="player">
+                <p>DALE PLAY</p>
+                <div class="progress-bar"></div>
+                <div class="controls">
+                    <i class="fas fa-random"></i>
+                    <i class="fas fa-step-backward"></i>
+                    <i class="fas fa-play-circle play-btn" id="play-btn"></i>
+                    <i class="fas fa-step-forward"></i>
+                    <i class="fas fa-sync-alt"></i>
+                </div>
+                <audio id="bg-music" src="cancion.mp3"></audio>
+            </div>
+
+            <div class="countdown-title">Solo faltan</div>
+            <div class="countdown-numbers" id="timer">0:00:00:00</div>
+            <div class="countdown-labels">
+                <span>DÍAS</span><span>HORAS</span><span>MINUTOS</span><span>SEGUNDOS</span>
+            </div>
+
+            <a href="CAMBIAR_AQUI_TU_LINK_DE_GOOGLE_FORM" target="_blank" class="btn">CONFIRMAR ASISTENCIA</a>
+        </div>
+    </div>
+
+    <img src="fotos/footer.jpg" alt="Footer" class="footer-img">
 
     <script>
         const music = document.getElementById("bg-music");
         const playBtn = document.getElementById("play-btn");
-        const icon = playBtn.querySelector("i");
 
         playBtn.addEventListener("click", function() {
             if (music.paused) {
                 music.play();
-                icon.classList.remove("fa-play");
-                icon.classList.add("fa-pause");
+                playBtn.classList.remove("fa-play-circle");
+                playBtn.classList.add("fa-pause-circle");
             } else {
                 music.pause();
-                icon.classList.remove("fa-pause");
-                icon.classList.add("fa-play");
+                playBtn.classList.remove("fa-pause-circle");
+                playBtn.classList.add("fa-play-circle");
             }
         });
 
         const targetDate = new Date("Jan 23, 2026 13:00:00").getTime();
+
+        function pad(n) {
+            return (n < 10 ? '0' : '') + n;
+        }
 
         setInterval(function() {
             const now = new Date().getTime();
@@ -189,12 +266,13 @@
 
             if (distance < 0) return;
 
-            document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
-            document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("timer").innerText = days + ":" + pad(hours) + ":" + pad(minutes) + ":" + pad(seconds);
         }, 1000);
     </script>
-
 </body>
 </html>
