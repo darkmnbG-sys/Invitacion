@@ -36,10 +36,9 @@
             border-bottom: 3px solid #c5a059;
         }
         
-        /* Estilo para el logo que harás en Canva */
         .logo-img {
             width: 100%;
-            max-width: 160px; /* Tamaño ideal para el logo */
+            max-width: 160px;
             height: auto;
             margin: 0 auto;
             display: block;
@@ -58,17 +57,21 @@
             min-height: 250px;
             display: block;
             object-fit: cover;
-            border-radius: 10px 10px 0 0; /* Bordes elegantes si usas foto cuadrada */
+            border-radius: 10px 10px 0 0;
             box-shadow: 0 -5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            z-index: 2;
         }
+        
+        /* SOBRE CORREGIDO: Más alto y visible */
         .css-envelope {
             position: relative;
             width: 100%;
-            height: 180px;
-            background: linear-gradient(to bottom, #7a916b, #6b825c);
+            height: 260px; /* Aumentamos la altura para que se vea bien */
+            background: linear-gradient(to bottom, #8da47e, #7a916b);
             z-index: 1;
-            margin-top: -5px;
-            box-shadow: inset 0 10px 20px rgba(0,0,0,0.2);
+            margin-top: -15px; /* Se mete un poquito debajo de la foto */
+            box-shadow: inset 0 10px 20px rgba(0,0,0,0.1);
         }
         .css-envelope::before {
             content: '';
@@ -77,13 +80,14 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #9eb58e, #8da47e);
-            clip-path: polygon(0 0, 50% 55%, 100% 0);
-            filter: drop-shadow(0 5px 5px rgba(0,0,0,0.3));
+            background: linear-gradient(135deg, #a3b895, #92a883);
+            clip-path: polygon(0 0, 50% 55%, 100% 0); /* La forma de V */
+            filter: drop-shadow(0 5px 5px rgba(0,0,0,0.2));
         }
+        
         .card-container {
             position: relative;
-            margin: -130px 15px 0;
+            margin: -100px 15px 0; /* Bajamos la tarjeta para que no tape el sobre */
             z-index: 3;
         }
         .card {
@@ -107,7 +111,6 @@
             opacity: 0.6;
         }
         
-        /* Sello generado con código (Elegante) */
         .seal {
             position: absolute;
             top: -45px;
@@ -225,12 +228,10 @@
 <body>
     <div class="mobile-wrapper">
         <div class="top-section">
-            <!-- Aquí va tu logo generado en Canva -->
             <img src="fotos/logo.png" alt="Logo Jazmin y Jose" class="logo-img" onerror="this.style.display='none'">
             
             <p class="quote">"Siempre tuyo, siempre mía, siempre nuestros."<br>Ludwig van Beethoven</p>
             
-            <!-- Aquí va la foto de ustedes (puede ser .png si le pones bordes rasgados en Canva, o .jpg si la dejas normal) -->
             <img src="fotos/pareja.png" alt="Jazmin y Jose" class="img-pareja" onerror="this.src='fotos/pareja.jpg'">
         </div>
 
@@ -279,7 +280,7 @@
                     <div class="time-box"><span id="seconds">00</span><label>SEG</label></div>
                 </div>
 
-                <a href="GOOGL_FORM_LINK_PENDING_TO_UPDATE" target="_blank" class="btn">CONFIRMAR ASISTENCIA</a>
+                <a href="CAMBIAR_AQUI_TU_LINK_DE_GOOGLE_FORM" target="_blank" class="btn">CONFIRMAR ASISTENCIA</a>
             </div>
         </div>
 
