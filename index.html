@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="robots" content="noindex">
     <title>Boda Jazmin & Jose</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Pinyon+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
@@ -61,16 +61,16 @@
             box-shadow: 0 -5px 15px rgba(0,0,0,0.05);
         }
         
-        /* SOBRE AJUSTADO: Más angosto para no tocar los bordes */
+        /* SOBRE AJUSTADO */
         .css-envelope {
             position: relative;
-            width: 90%; /* Reducido del 100% para dejar margen */
+            width: 90%;
             max-width: 430px;
             height: 180px;
             background-color: #798c6b;
             z-index: 1;
-            margin: -10px auto 0; /* Centrado automáticamente */
-            border-radius: 4px 4px 0 0; /* Bordes superiores redondeados */
+            margin: -10px auto 0;
+            border-radius: 4px 4px 0 0;
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
         .env-bottom {
@@ -95,12 +95,11 @@
             z-index: 2;
         }
 
-        /* TARJETA AJUSTADA: Proporcional al nuevo sobre */
         .card-container {
             position: relative;
-            width: 82%; /* Más angosta que el sobre para que parezca que sale de él */
+            width: 82%;
             max-width: 390px;
-            margin: -90px auto 0; /* Centrada */
+            margin: -90px auto 0;
             z-index: 3;
         }
         .card {
@@ -161,7 +160,7 @@
         }
 
         .invite-text {
-            font-size: 1.1em;
+            font-size: 1.2em;
             letter-spacing: 3px;
             text-transform: uppercase;
             margin-bottom: 15px;
@@ -169,27 +168,15 @@
             color: #4a5d3f;
             font-weight: 600;
         }
+        
+        /* NOMBRES Y & ACTUALIZADOS A LA FUENTE CORRECTA */
         .names {
-            font-family: 'Pinyon Script', cursive;
-            font-size: 4em;
+            font-family: 'Great Vibes', cursive;
+            font-size: 4.5em;
             margin: 15px 0;
             font-weight: normal;
             color: #2c3525;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        /* AMPERSAND CORREGIDO: Cursiva elegante */
-        .ampersand {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 0.8em;
-            color: #c5a059;
-            margin: 0 10px;
-            font-weight: 600;
         }
 
         .divider {
@@ -215,7 +202,7 @@
             align-items: center;
             gap: 15px;
             margin-bottom: 30px;
-            font-size: 1.1em;
+            font-size: 1.2em;
             letter-spacing: 2px;
             font-weight: 600;
             color: #4a5d3f;
@@ -228,11 +215,11 @@
             border-right: 2px solid #c5a059;
             padding: 0 15px;
         }
-        .date-center .month { font-size: 0.9em; letter-spacing: 3px; }
+        .date-center .month { font-size: 1em; letter-spacing: 3px; }
         .date-center .day-num { font-size: 2.8em; line-height: 1; margin: 5px 0; font-family: 'Cinzel', serif; color: #2c3525; }
         .date-center .year { font-size: 0.9em; letter-spacing: 3px; }
         .player { margin-bottom: 40px; padding: 20px 10px; background: #f4f7f4; border-radius: 10px; border: 1px solid #e0e5e0; }
-        .player p { letter-spacing: 3px; margin-top: 0; margin-bottom: 15px; font-size: 1em; font-weight: 600; color: #4a5d3f; }
+        .player p { letter-spacing: 3px; margin-top: 0; margin-bottom: 15px; font-size: 1.1em; font-weight: 600; color: #4a5d3f; }
         .progress-bar { width: 80%; height: 3px; background: #d0d5d0; margin: 0 auto 20px; position: relative; border-radius: 2px; }
         .progress-bar::after { content: ''; position: absolute; left: 30%; top: -4px; width: 12px; height: 12px; background: #c5a059; border-radius: 50%; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
         .progress-bar::before { content: ''; position: absolute; left: 0; top: 0; width: 30%; height: 100%; background: #c5a059; border-radius: 2px; }
@@ -240,7 +227,7 @@
         .play-btn { font-size: 2.5em; cursor: pointer; color: #c5a059; transition: transform 0.2s; }
         .play-btn:active { transform: scale(0.9); }
         
-        .countdown-title { font-family: 'Pinyon Script', cursive; font-size: 3.5em; margin-bottom: 20px; color: #2c3525; }
+        .countdown-title { font-family: 'Great Vibes', cursive; font-size: 3.5em; margin-bottom: 20px; color: #2c3525; }
         .countdown-container { display: flex; justify-content: center; gap: 8px; margin-bottom: 10px; }
         .time-box { background: #fff; border: 1px solid #e0d5c1; border-radius: 8px; width: 58px; padding: 10px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
         .time-box span { font-size: 2em; font-family: 'Cinzel', serif; font-weight: 600; display: block; color: #4a5d3f; }
@@ -279,8 +266,8 @@
                 
                 <div class="divider"><i class="fas fa-leaf"></i></div>
                 
-                <!-- Ampersand corregido -->
-                <div class="names">Jazmin <span class="ampersand">&</span> Jose</div>
+                <!-- Nombres con la fuente y símbolo correctos -->
+                <div class="names">Jazmin & Jose</div>
                 
                 <div class="divider"><i class="fas fa-leaf"></i></div>
                 
