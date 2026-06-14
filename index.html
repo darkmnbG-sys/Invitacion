@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Boda Sandra & Dilan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #c8d5c8;
+            margin: 0;
+            padding: 20px;
+            font-family: 'Cormorant Garamond', serif;
+            display: flex;
+            justify-content: center;
+        }
+        .card {
+            background: white;
+            width: 100%;
+            max-width: 500px;
+            border-radius: 15px;
+            padding: 40px 20px 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+            margin-top: 40px;
+            box-sizing: border-box;
+        }
+        .seal {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #8b0000; /* Color de lacre por defecto si no hay imagen */
+            background-image: url('fotos/sello.png');
+            background-size: cover;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #333;
+            margin: 10px 0;
+        }
+        .date {
+            font-size: 1.2em;
+            letter-spacing: 2px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .player-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .play-btn {
+            background: #c8d5c8;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            color: white;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .countdown-title {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .time-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .time-box span {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #333;
+        }
+        .time-box label {
+            font-size: 0.8em;
+            color: #666;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #c8d5c8;
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            transition: background 0.3s;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+        }
+        .footer-photo {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="seal"></div>
+        
+        <h1>Jazmin & Jose</h1>
+        <p class="date">Sabado OCT 03 2026 8:30 P.M.</p>
+
+        <div class="player-container">
+            <span>DALE PLAY</span>
+            <button class="play-btn" id="play-btn">
+                <i class="fas fa-play"></i>
+            </button>
+            <audio id="bg-music" src="cancion.mp3"></audio>
+        </div>
+
+        <div class="countdown-title">Solo faltan</div>
+        <div class="countdown">
+            <div class="time-box"><span id="days">00</span><label>DÍAS</label></div>
+            <div class="time-box"><span id="hours">00</span><label>HRS</label></div>
+            <div class="time-box"><span id="minutes">00</span><label>MIN</label></div>
+            <div class="time-box"><span id="seconds">00</span><label>SEG</label></div>
+        </div>
+
+        <a href="CAMBIAR_AQUI_TU_LINK_DE_GOOGLE_FORM" target="_blank" class="btn">CONFIRMAR ASISTENCIA</a>
+
+        <div class="gallery">
+            <img src="fotos/foto1.jpg" alt="Foto 1">
+            <img src="fotos/foto2.jpg" alt="Foto 2">
+            <img src="fotos/foto3.jpg" alt="Foto 3">
+            <img src="fotos/foto4.jpg" alt="Foto 4">
+        </div>
+
+        <img src="fotos/footer.jpg" alt="Footer" class="footer-photo">
+    </div>
+
+    <script>
+        const music = document.getElementById("bg-music");
+        const playBtn = document.getElementById("play-btn");
+        const icon = playBtn.querySelector("i");
+
+        playBtn.addEventListener("click", function() {
+            if (music.paused) {
+                music.play();
+                icon.classList.remove("fa-play");
+                icon.classList.add("fa-pause");
+            } else {
+                music.pause();
+                icon.classList.remove("fa-pause");
+                icon.classList.add("fa-play");
+            }
+        });
+
+        const targetDate = new Date("Jan 23, 2026 13:00:00").getTime();
+
+        setInterval(function() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) return;
+
+            document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
+        }, 1000);
+    </script>
+
+</body>
+</html>
