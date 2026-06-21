@@ -11,17 +11,17 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #F9F6F0; /* Beige muy claro */
-            background-image: radial-gradient(#EAE0D5 1px, transparent 1px); /* Puntos beige */
+            background-color: #F9F6F0;
+            background-image: radial-gradient(#EAE0D5 1px, transparent 1px);
             background-size: 20px 20px;
             font-family: 'Cormorant Garamond', serif;
-            color: #5C4A3D; /* Café/Dorado oscuro para textos */
+            color: #5C4A3D;
         }
         .mobile-wrapper {
             width: 100%;
             max-width: 480px;
             margin: 0 auto;
-            background-color: #FFFFFF; /* Blanco puro */
+            background-color: #FFFFFF;
             position: relative;
             box-shadow: 0 0 30px rgba(0,0,0,0.1);
             overflow-x: hidden;
@@ -33,7 +33,7 @@
             text-align: center;
             position: relative;
             z-index: 2;
-            border-bottom: 3px solid #D4AF37; /* Dorado */
+            border-bottom: 3px solid #D4AF37;
         }
         
         .logo-img {
@@ -49,7 +49,7 @@
             font-style: italic;
             font-size: 1.4em;
             margin: 25px auto 30px;
-            color: #8B7355; /* Dorado oscuro */
+            color: #8B7355;
             line-height: 1.4;
         }
         .img-pareja {
@@ -61,13 +61,12 @@
             box-shadow: 0 -5px 15px rgba(0,0,0,0.05);
         }
         
-        /* SOBRE BEIGE Y BLANCO */
         .css-envelope {
             position: relative;
             width: 90%;
             max-width: 430px;
             height: 180px;
-            background-color: #DCD0C0; /* Interior del sobre (Beige oscuro) */
+            background-color: #DCD0C0;
             z-index: 1;
             margin: -10px auto 0;
             border-radius: 4px 4px 0 0;
@@ -76,21 +75,21 @@
         .env-bottom {
             position: absolute;
             bottom: 0; left: 0; width: 100%; height: 100%;
-            background-color: #E8DEC8; /* Solapa inferior (Beige medio) */
+            background-color: #E8DEC8;
             clip-path: polygon(0 100%, 100% 100%, 100% 15%, 50% 75%, 0 15%);
             border-radius: 0 0 4px 4px;
         }
         .env-shadow {
             position: absolute;
             top: 4px; left: 0; width: 100%; height: 85%;
-            background-color: rgba(0,0,0,0.12); /* Sombra suave */
+            background-color: rgba(0,0,0,0.12);
             clip-path: polygon(0 0, 100% 0, 50% 100%);
             z-index: 1;
         }
         .env-top {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 85%;
-            background-color: #F4EFE6; /* Solapa superior (Beige muy claro) */
+            background-color: #F4EFE6;
             clip-path: polygon(0 0, 100% 0, 50% 100%);
             z-index: 2;
         }
@@ -103,7 +102,7 @@
             z-index: 3;
         }
         .card {
-            background-color: #FFFFFF; /* Tarjeta blanca */
+            background-color: #FFFFFF;
             padding: 60px 15px 40px;
             text-align: center;
             box-shadow: 0 15px 30px rgba(0,0,0,0.1);
@@ -118,7 +117,7 @@
             left: 8px;
             right: 8px;
             bottom: 8px;
-            border: 1px solid #D4AF37; /* Borde interno dorado */
+            border: 1px solid #D4AF37;
             pointer-events: none;
             opacity: 0.5;
         }
@@ -139,7 +138,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 2px solid #D4AF37; /* Borde dorado */
+            border: 2px solid #D4AF37;
         }
         .seal::before {
             content: '';
@@ -153,7 +152,7 @@
         .seal::after {
             content: '❀';
             font-size: 38px;
-            color: #D4AF37; /* Flor dorada */
+            color: #D4AF37;
             text-shadow: -1px -1px 1px rgba(0,0,0,0.05), 1px 1px 1px rgba(255,255,255,0.8);
             position: relative;
             z-index: 1;
@@ -184,7 +183,7 @@
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
             font-size: 0.8em;
-            color: #D4AF37; /* Dorado */
+            color: #D4AF37;
             margin: 0 10px;
             font-weight: 600;
         }
@@ -197,11 +196,11 @@
         .divider::before, .divider::after {
             content: '';
             height: 1px;
-            background: #D4AF37; /* Dorado */
+            background: #D4AF37;
             width: 25%;
         }
         .divider i {
-            color: #D4AF37; /* Dorado */
+            color: #D4AF37;
             margin: 0 15px;
             font-size: 0.8em;
         }
@@ -220,8 +219,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            border-left: 2px solid #D4AF37; /* Dorado */
-            border-right: 2px solid #D4AF37; /* Dorado */
+            border-left: 2px solid #D4AF37;
+            border-right: 2px solid #D4AF37;
             padding: 0 15px;
         }
         .date-center .month { font-size: 1em; letter-spacing: 3px; }
@@ -243,10 +242,44 @@
         .time-box span { font-size: 2em; font-family: 'Cinzel', serif; font-weight: 600; display: block; color: #5C4A3D; }
         .time-box label { font-size: 0.6em; letter-spacing: 1px; font-family: sans-serif; color: #A39687; font-weight: bold; }
         
-        /* Botón Dorado */
         .btn { display: inline-block; background: linear-gradient(135deg, #D4AF37, #B5952F); color: white; text-decoration: none; padding: 18px 25px; border-radius: 30px; font-size: 1em; letter-spacing: 2px; margin-top: 40px; box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3); border: 1px solid #D4AF37; font-weight: 600; transition: background 0.3s; width: 90%; box-sizing: border-box; }
         
-        .gallery-title { font-family: 'Cinzel', serif; font-size: 1.6em; text-align: center; margin: 50px 0 20px; color: #8B7355; letter-spacing: 3px; }
+        /* SECCIÓN DE UBICACIÓN */
+        .location-section {
+            padding: 0 20px;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.6em;
+            color: #8B7355;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+        .location-name {
+            font-size: 1.3em;
+            color: #5C4A3D;
+            margin-bottom: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        .map-container {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            border: 2px solid #fff;
+            background-color: #E8DEC8;
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 300px;
+            display: block;
+            border: none;
+        }
+
         .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 0 20px; margin-bottom: 40px; }
         .gallery img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 8px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); border: 2px solid #fff; }
         
@@ -316,7 +349,16 @@
             </div>
         </div>
 
-        <div class="gallery-title">NUESTROS MOMENTOS</div>
+        <!-- NUEVA SECCIÓN DE UBICACIÓN -->
+        <div class="location-section">
+            <div class="section-title">UBICACIÓN</div>
+            <div class="location-name">Terraza Isabelas</div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1096.7580676766788!2d-103.4843673770106!3d20.61687315116379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428aba50ae96d9d%3A0x2b1589400b37b980!2sTerraza%20Isabelas!5e0!3m2!1ses-419!2sus!4v1782061009712!5m2!1ses-419!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+        <div class="section-title" style="margin-top: 40px;">NUESTROS MOMENTOS</div>
         <div class="gallery">
             <img src="fotos/foto1.jpg" alt="Foto 1" onerror="this.style.display='none'">
             <img src="fotos/foto2.jpg" alt="Foto 2" onerror="this.style.display='none'">
