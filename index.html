@@ -12,17 +12,17 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #F9F6F0; /* Beige muy claro de fondo */
+            background-color: #F9F6F0;
             background-image: radial-gradient(#EAE0D5 1px, transparent 1px);
             background-size: 20px 20px;
             font-family: 'Cormorant Garamond', serif;
-            color: #5C4A3D; /* Café oscuro elegante para textos */
+            color: #5C4A3D;
         }
         .mobile-wrapper {
             width: 100%;
             max-width: 480px;
             margin: 0 auto;
-            background-color: #FFFFFF; /* Fondo principal blanco */
+            background-color: #FFFFFF;
             position: relative;
             box-shadow: 0 0 30px rgba(0,0,0,0.1);
             overflow-x: hidden;
@@ -32,18 +32,27 @@
         /* ENCABEZADO */
         .top-section {
             background-color: #FFFFFF;
-            padding: 50px 20px 10px;
+            padding: 50px 20px 30px;
             text-align: center;
             position: relative;
             z-index: 2;
+            border-bottom: 3px solid #D4AF37;
         }
         .logo-img {
             width: 100%;
-            max-width: 180px;
+            max-width: 160px;
             height: auto;
-            margin: 0 auto 20px;
+            margin: 0 auto 30px;
             display: block;
-            filter: drop-shadow(0px 2px 5px rgba(0,0,0,0.05));
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.05));
+        }
+        .img-pareja {
+            width: 100%;
+            min-height: 250px;
+            display: block;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
         }
 
         /* SOBRE BEIGE 3D */
@@ -221,17 +230,6 @@
         .play-btn { font-size: 2.5em; cursor: pointer; color: #D4AF37; transition: transform 0.2s; }
         .play-btn:active { transform: scale(0.9); }
 
-        /* CONTADOR */
-        .countdown-title { font-family: 'Great Vibes', cursive; font-size: 3.5em; margin-bottom: 20px; color: #5C4A3D; }
-        .countdown-container { display: flex; justify-content: center; gap: 8px; margin-bottom: 10px; }
-        .time-box { background: #FFFFFF; border: 1px solid #E8DEC8; border-radius: 8px; width: 58px; padding: 10px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.03); }
-        .time-box span { font-size: 2em; font-family: 'Cinzel', serif; font-weight: 600; display: block; color: #5C4A3D; }
-        .time-box label { font-size: 0.6em; letter-spacing: 1px; font-family: sans-serif; color: #A39687; font-weight: bold; }
-
-        /* BOTÓN DE CONFIRMACIÓN */
-        .btn { display: inline-block; background: linear-gradient(135deg, #D4AF37, #B5952F); color: white; text-decoration: none; padding: 18px 25px; border-radius: 30px; font-size: 1em; letter-spacing: 2px; margin-top: 20px; box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3); border: 1px solid #D4AF37; font-weight: 600; transition: background 0.3s; width: 90%; box-sizing: border-box; }
-        .ticket-info { font-size: 1.05em; color: #8B7355; margin-top: 20px; margin-bottom: 40px; line-height: 1.4; font-style: italic; padding: 0 10px; }
-
         /* IMÁGENES INTERCALADAS */
         .section-img {
             width: 100%;
@@ -244,7 +242,7 @@
             border: 2px solid #E8DEC8;
         }
         .portrait-img {
-            aspect-ratio: 4 / 5; /* Para la foto principal de ustedes */
+            aspect-ratio: 4 / 5;
         }
 
         /* BLOQUES DE INFORMACIÓN */
@@ -270,34 +268,83 @@
             display: block;
         }
         
-        /* DRESS CODE CON IMAGEN AL LADO */
-        .dress-code-container {
+        /* NUEVO DRESS CODE (Estilo Revista) */
+        .dress-code-wrapper {
             display: flex;
             align-items: center;
-            gap: 15px;
-            text-align: left;
+            justify-content: space-between;
+            margin: 40px 0;
+            padding: 0;
+            background: transparent;
         }
-        .dress-code-img {
+        .dress-left {
             width: 45%;
-            aspect-ratio: 4 / 5;
+        }
+        .dress-left img {
+            width: 100%;
+            aspect-ratio: 3 / 4;
             object-fit: cover;
             border-radius: 6px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             border: 1px solid #E8DEC8;
         }
-        .dress-code-text {
-            width: 55%;
+        .dress-center {
+            width: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        .dress-code-text .info-title {
-            margin-bottom: 10px;
-            font-size: 1.2em;
+        .vertical-text {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            font-family: 'Cinzel', serif;
+            font-size: 1.6em;
+            letter-spacing: 4px;
+            color: #5C4A3D;
+            text-align: center;
         }
-        .dress-code-text .info-text {
+        .dress-right {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .dress-right .info-title {
             font-size: 1.1em;
+            margin-bottom: 15px;
+            line-height: 1.3;
+            color: #5C4A3D;
+        }
+        .palette-img {
+            width: 100%;
+            border-radius: 4px;
             margin-bottom: 10px;
         }
-        .dress-code-text .info-paragraph {
-            font-size: 0.95em;
+        .color-circles {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+        .circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        /* Colores de la paleta basados en tu imagen */
+        .c1 { background-color: #8d9b6e; }
+        .c2 { background-color: #d1b3d4; }
+        .c3 { background-color: #f0e6b3; }
+        .c4 { background-color: #f2c4ce; }
+        .c5 { background-color: #e0c09a; }
+        
+        .dress-right .info-paragraph {
+            font-size: 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.4;
             padding: 0;
         }
 
@@ -369,6 +416,16 @@
             text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
         }
 
+        /* CONTADOR */
+        .countdown-title { font-family: 'Great Vibes', cursive; font-size: 3.5em; margin-bottom: 20px; color: #5C4A3D; }
+        .countdown-container { display: flex; justify-content: center; gap: 8px; margin-bottom: 10px; }
+        .time-box { background: #FFFFFF; border: 1px solid #E8DEC8; border-radius: 8px; width: 58px; padding: 10px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.03); }
+        .time-box span { font-size: 2em; font-family: 'Cinzel', serif; font-weight: 600; display: block; color: #5C4A3D; }
+        .time-box label { font-size: 0.6em; letter-spacing: 1px; font-family: sans-serif; color: #A39687; font-weight: bold; }
+        
+        /* BOTÓN Y FOOTER */
+        .btn { display: inline-block; background: linear-gradient(135deg, #D4AF37, #B5952F); color: white; text-decoration: none; padding: 18px 25px; border-radius: 30px; font-size: 1em; letter-spacing: 2px; margin-top: 40px; box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3); border: 1px solid #D4AF37; font-weight: 600; transition: background 0.3s; width: 90%; box-sizing: border-box; }
+        .ticket-info { font-size: 1.05em; color: #8B7355; margin-top: 20px; line-height: 1.4; font-style: italic; padding: 0 10px; }
         .thank-you { font-family: 'Great Vibes', cursive; font-size: 3em; color: #5C4A3D; margin-top: 30px; }
 
         .gallery-title { font-family: 'Cinzel', serif; font-size: 1.6em; text-align: center; margin: 50px 0 20px; color: #8B7355; letter-spacing: 3px; }
@@ -497,15 +554,28 @@
                     </div>
                 </div>
 
-                <!-- DRESS CODE CON FOTO 6 A LA IZQUIERDA -->
-                <div class="info-block">
-                    <div class="dress-code-container">
-                        <img src="fotos/foto6.jpeg" alt="Dress Code" class="dress-code-img" onerror="this.style.display='none'">
-                        <div class="dress-code-text">
-                            <div class="info-title">Dress Code</div>
-                            <div class="info-text">Formal de playa</div>
-                            <p class="info-paragraph">Favor de evitar blanco, beige o tonos muy claros.</p>
+                <!-- DRESS CODE ESTILO REVISTA -->
+                <div class="dress-code-wrapper">
+                    <div class="dress-left">
+                        <img src="fotos/foto6.jpeg" alt="Dress Code" onerror="this.style.display='none'">
+                    </div>
+                    <div class="dress-center">
+                        <div class="vertical-text">DRESS CODE</div>
+                    </div>
+                    <div class="dress-right">
+                        <div class="info-title">FORMAL DE<br>PLAYA</div>
+                        
+                        <!-- Opcional: Si quieres subir un collage de ropa, llámalo ropa.png y ponlo en la carpeta fotos -->
+                        <img src="fotos/ropa.png" alt="Ejemplo ropa" class="palette-img" onerror="this.style.display='none'">
+                        
+                        <div class="color-circles">
+                            <div class="circle c1"></div>
+                            <div class="circle c2"></div>
+                            <div class="circle c3"></div>
+                            <div class="circle c4"></div>
+                            <div class="circle c5"></div>
                         </div>
+                        <div class="info-paragraph">FAVOR DE EVITAR<br>BLANCO, BEIGE O TONOS<br>MUY CLAROS</div>
                     </div>
                 </div>
 
@@ -516,7 +586,7 @@
                 <div class="info-block">
                     <i class="fas fa-gift icon-gold"></i>
                     <div class="info-title">Sugerencia de Regalo</div>
-                    <p class="info-paragraph">Tu presencia es el mejor regalo en nuestro día especial. Si además deseas darnos un obsequio podrá ser de la manera tradicional o en lluvia de sobres con efectivo muchas gracias.</p>
+                    <p class="info-paragraph">Tu presencia es el mejor regalo en nuestro día especial. Si además deseas darnos un obsequio podrá ser de la manera tradicional o en lluvia de sobres con efectivo.</p>
                 </div>
 
                 <!-- FOTO 4 -->
