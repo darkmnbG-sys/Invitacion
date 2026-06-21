@@ -8,44 +8,48 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* PALETA DE COLORES: Blanco, Beige y Dorado */
         body {
             margin: 0;
             padding: 0;
-            background-color: #8d9b6e; /* Verde salvia oscuro */
+            background-color: #F9F6F0; /* Beige muy claro */
+            background-image: radial-gradient(#EAE0D5 1px, transparent 1px);
+            background-size: 20px 20px;
             font-family: 'Cormorant Garamond', serif;
-            color: #2c3525;
+            color: #5C4A3D; /* Café/Dorado oscuro para textos */
         }
         .mobile-wrapper {
             width: 100%;
             max-width: 480px;
             margin: 0 auto;
-            background-color: #9eb58e; /* Verde salvia claro */
+            background-color: #FFFFFF; /* Blanco puro */
             position: relative;
-            box-shadow: 0 0 30px rgba(0,0,0,0.3);
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
             overflow-x: hidden;
             min-height: 100vh;
         }
+        
+        /* ENCABEZADO Y FOTO */
         .top-section {
-            background-color: #fffaf4; /* Crema original de Canva */
-            padding: 50px 20px 30px;
+            background-color: #FFFFFF;
+            padding: 50px 20px 20px;
             text-align: center;
             position: relative;
             z-index: 2;
         }
-        
         .logo-img {
             width: 100%;
             max-width: 160px;
             height: auto;
             margin: 0 auto;
             display: block;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.05));
         }
-
         .quote {
             font-style: italic;
             font-size: 1.4em;
             margin: 25px auto 30px;
-            color: #4a5d3f;
+            color: #8B7355;
             line-height: 1.4;
         }
         .img-pareja {
@@ -56,79 +60,68 @@
             border-radius: 8px;
             box-shadow: 0 6px 15px rgba(0,0,0,0.08);
         }
-        
-        .player { margin: 30px auto 0; padding: 20px 10px; background: #fffaf4; border-radius: 10px; border: 1px solid #e0d5c1; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
-        .player p { letter-spacing: 3px; margin-top: 0; margin-bottom: 15px; font-size: 1.1em; font-weight: 600; color: #4a5d3f; }
-        .progress-bar { width: 80%; height: 3px; background: #d0d5d0; margin: 0 auto 20px; position: relative; border-radius: 2px; }
-        .progress-bar::after { content: ''; position: absolute; left: 30%; top: -4px; width: 12px; height: 12px; background: #c5a059; border-radius: 50%; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-        .progress-bar::before { content: ''; position: absolute; left: 0; top: 0; width: 30%; height: 100%; background: #c5a059; border-radius: 2px; }
-        .controls { display: flex; justify-content: center; align-items: center; gap: 25px; font-size: 1.2em; color: #4a5d3f; }
-        .play-btn { font-size: 2.5em; cursor: pointer; color: #c5a059; transition: transform 0.2s; }
-        .play-btn:active { transform: scale(0.9); }
 
-        /* SOBRE VERDE AJUSTADO */
+        /* SOBRE BEIGE 3D */
         .css-envelope {
             position: relative;
-            width: 90%;
-            max-width: 430px;
+            width: 92%;
+            max-width: 440px;
             height: 180px;
-            background-color: #7a8a5c;
+            background-color: #DCD0C0; /* Interior beige oscuro */
             z-index: 1;
-            margin: 40px auto 0;
+            margin: 30px auto 0;
             border-radius: 4px 4px 0 0;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
         }
         .env-bottom {
             position: absolute;
             bottom: 0; left: 0; width: 100%; height: 100%;
-            background-color: #8d9b6e;
+            background-color: #E8DEC8; /* Solapa inferior */
             clip-path: polygon(0 100%, 100% 100%, 100% 15%, 50% 75%, 0 15%);
             border-radius: 0 0 4px 4px;
         }
         .env-shadow {
             position: absolute;
             top: 4px; left: 0; width: 100%; height: 85%;
-            background-color: rgba(0,0,0,0.15);
+            background-color: rgba(0,0,0,0.12);
             clip-path: polygon(0 0, 100% 0, 50% 100%);
             z-index: 1;
         }
         .env-top {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 85%;
-            background-color: #9eb58e;
+            background-color: #F4EFE6; /* Solapa superior clara */
             clip-path: polygon(0 0, 100% 0, 50% 100%);
             z-index: 2;
         }
 
-        /* TARJETA CREMA */
+        /* TARJETA BLANCA PRINCIPAL */
         .card-container {
             position: relative;
-            width: 82%;
-            max-width: 390px;
+            width: 84%;
+            max-width: 400px;
             margin: -90px auto 0;
             z-index: 3;
         }
         .card {
-            background-color: #fffaf4;
-            padding: 60px 15px 40px;
+            background-color: #FFFFFF;
+            padding: 60px 15px 50px;
             text-align: center;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
             position: relative;
-            border: 1px solid #e0d5c1;
+            border: 1px solid #E8DEC8;
             border-radius: 4px;
         }
         .card::before {
             content: '';
             position: absolute;
-            top: 8px;
-            left: 8px;
-            right: 8px;
-            bottom: 8px;
-            border: 1px solid #c5a059;
+            top: 8px; left: 8px; right: 8px; bottom: 8px;
+            border: 1px solid #D4AF37;
             pointer-events: none;
-            opacity: 0.4;
+            opacity: 0.5;
         }
         
+        /* SELLO */
         .seal {
             position: absolute;
             top: -45px;
@@ -136,71 +129,80 @@
             transform: translateX(-50%);
             width: 90px;
             height: 90px;
-            background: radial-gradient(circle at 30% 30%, #ffffff, #f4ece8 70%, #e3d5cd);
+            background: radial-gradient(circle at 30% 30%, #FFFFFF, #F4EFE6 70%, #E8DEC8);
             border-radius: 50%;
-            box-shadow: 
-                0 6px 12px rgba(0,0,0,0.15), 
-                inset 0 -3px 6px rgba(0,0,0,0.05), 
-                inset 0 3px 6px rgba(255,255,255,0.8);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15), inset 0 -3px 6px rgba(0,0,0,0.05), inset 0 3px 6px rgba(255,255,255,0.8);
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 2px solid #c5a059;
+            border: 2px solid #D4AF37;
         }
         .seal::before {
             content: '';
             position: absolute;
-            width: 70px;
-            height: 70px;
+            width: 70px; height: 70px;
             border-radius: 50%;
-            border: 1px solid rgba(197, 160, 89, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.4);
             box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
         }
         .seal::after {
             content: '❀';
             font-size: 38px;
-            color: #c5a059;
+            color: #D4AF37;
             text-shadow: -1px -1px 1px rgba(0,0,0,0.05), 1px 1px 1px rgba(255,255,255,0.8);
             position: relative;
             z-index: 1;
         }
 
+        /* TIPOGRAFÍAS Y TEXTOS */
         .invite-text {
             font-size: 1.1em;
             letter-spacing: 3px;
             text-transform: uppercase;
             margin-bottom: 15px;
             line-height: 1.5;
-            color: #4a5d3f;
+            color: #8B7355;
             font-weight: 600;
         }
-        
         .names {
             font-family: 'Great Vibes', cursive;
             font-size: 4.5em;
             margin: 15px 0;
             font-weight: normal;
-            color: #2c3525;
+            color: #5C4A3D;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
         }
-
+        .ampersand {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 0.8em;
+            color: #D4AF37;
+            margin: 0 10px;
+            font-weight: 600;
+        }
         .divider {
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 25px 0;
+            margin: 30px 0;
         }
         .divider::before, .divider::after {
             content: '';
             height: 1px;
-            background: #c5a059;
+            background: #D4AF37;
             width: 25%;
         }
         .divider i {
-            color: #c5a059;
+            color: #D4AF37;
             margin: 0 15px;
             font-size: 0.8em;
         }
+        
+        /* FECHA */
         .date-layout {
             display: flex;
             justify-content: center;
@@ -210,156 +212,124 @@
             font-size: 1.2em;
             letter-spacing: 2px;
             font-weight: 600;
-            color: #4a5d3f;
+            color: #8B7355;
         }
         .date-center {
             display: flex;
             flex-direction: column;
             align-items: center;
-            border-left: 2px solid #c5a059;
-            border-right: 2px solid #c5a059;
+            border-left: 2px solid #D4AF37;
+            border-right: 2px solid #D4AF37;
             padding: 0 15px;
         }
         .date-center .month { font-size: 1em; letter-spacing: 3px; }
-        .date-center .day-num { font-size: 2.8em; line-height: 1; margin: 5px 0; font-family: 'Cinzel', serif; color: #2c3525; }
+        .date-center .day-num { font-size: 2.8em; line-height: 1; margin: 5px 0; font-family: 'Cinzel', serif; color: #5C4A3D; }
         .date-center .year { font-size: 0.9em; letter-spacing: 3px; }
         
-        /* PADRES Y PADRINOS */
-        .parents-section {
-            margin: 10px 0 40px;
+        /* REPRODUCTOR */
+        .player { margin: 0 auto 40px; padding: 20px 10px; background: #FAF8F5; border-radius: 10px; border: 1px solid #E8DEC8; }
+        .player p { letter-spacing: 3px; margin-top: 0; margin-bottom: 15px; font-size: 1.1em; font-weight: 600; color: #8B7355; }
+        .progress-bar { width: 80%; height: 3px; background: #E8DEC8; margin: 0 auto 20px; position: relative; border-radius: 2px; }
+        .progress-bar::after { content: ''; position: absolute; left: 30%; top: -4px; width: 12px; height: 12px; background: #D4AF37; border-radius: 50%; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .progress-bar::before { content: ''; position: absolute; left: 0; top: 0; width: 30%; height: 100%; background: #D4AF37; border-radius: 2px; }
+        .controls { display: flex; justify-content: center; align-items: center; gap: 25px; font-size: 1.2em; color: #8B7355; }
+        .play-btn { font-size: 2.5em; cursor: pointer; color: #D4AF37; transition: transform 0.2s; }
+        .play-btn:active { transform: scale(0.9); }
+
+        /* BLOQUES DE INFORMACIÓN (Padres, Dress Code, Regalos) */
+        .info-block {
+            margin-bottom: 35px;
         }
-        .parents-title {
+        .info-title {
             font-family: 'Cinzel', serif;
-            font-size: 1.3em;
+            font-size: 1.4em;
             color: #8B7355;
             letter-spacing: 3px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
         }
-        .parents-block {
-            margin-bottom: 20px;
-        }
-        .parents-label {
+        .info-subtitle {
             font-size: 0.85em;
             letter-spacing: 2px;
-            color: #888;
+            color: #A39687;
             text-transform: uppercase;
             margin-bottom: 5px;
             font-weight: 600;
         }
-        .parents-names {
-            font-size: 1.4em;
+        .info-text {
+            font-size: 1.3em;
             font-style: italic;
-            color: #2c3525;
+            color: #5C4A3D;
             font-weight: 600;
-        }
-        .ampersand {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 0.8em;
-            color: #c5a059;
-            margin: 0 5px;
-            font-weight: 600;
-        }
-
-        .countdown-title { font-family: 'Great Vibes', cursive; font-size: 3.5em; margin-bottom: 20px; color: #2c3525; }
-        .countdown-container { display: flex; justify-content: center; gap: 8px; margin-bottom: 10px; }
-        .time-box { background: #fffaf4; border: 1px solid #e0d5c1; border-radius: 8px; width: 58px; padding: 10px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.03); }
-        .time-box span { font-size: 2em; font-family: 'Cinzel', serif; font-weight: 600; display: block; color: #4a5d3f; }
-        .time-box label { font-size: 0.6em; letter-spacing: 1px; font-family: sans-serif; color: #888; font-weight: bold; }
-        
-        .btn { display: inline-block; background: linear-gradient(135deg, #8d9b6e, #7a8a5c); color: white; text-decoration: none; padding: 18px 25px; border-radius: 30px; font-size: 1em; letter-spacing: 2px; margin-top: 40px; box-shadow: 0 8px 20px rgba(141, 155, 110, 0.4); border: 1px solid #8d9b6e; font-weight: 600; transition: background 0.3s; width: 90%; box-sizing: border-box; }
-        
-        .ticket-info {
-            font-size: 1.05em;
-            color: #4a5d3f;
-            margin-top: 20px;
             line-height: 1.4;
-            font-style: italic;
+            margin-bottom: 15px;
+        }
+        .info-paragraph {
+            font-size: 1.1em;
+            color: #5C4A3D;
+            line-height: 1.5;
             padding: 0 10px;
         }
 
-        .location-section {
-            padding: 0 20px;
-            margin-top: 50px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .section-title {
-            font-family: 'Cinzel', serif;
-            font-size: 1.6em;
-            color: #fffaf4;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-        }
-        .location-name {
-            font-size: 1.4em;
-            color: #2c3525;
-            margin-bottom: 20px;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
+        /* MAPA */
         .map-container {
             width: 100%;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-            border: 2px solid #fffaf4;
-            background-color: #fffaf4;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            border: 2px solid #E8DEC8;
+            margin-top: 15px;
         }
         .map-container iframe {
             width: 100%;
-            height: 300px;
+            height: 250px;
             display: block;
             border: none;
         }
 
-        .gallery-title { font-family: 'Cinzel', serif; font-size: 1.6em; text-align: center; margin: 50px 0 20px; color: #fffaf4; letter-spacing: 3px; text-shadow: 1px 1px 3px rgba(0,0,0,0.2); }
-        .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 0 20px; margin-bottom: 40px; }
-        .gallery img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 8px; box-shadow: 0 6px 15px rgba(0,0,0,0.15); border: 2px solid #fffaf4; }
+        /* CONTADOR */
+        .countdown-title { font-family: 'Great Vibes', cursive; font-size: 3.5em; margin-bottom: 20px; color: #5C4A3D; }
+        .countdown-container { display: flex; justify-content: center; gap: 8px; margin-bottom: 10px; }
+        .time-box { background: #FFFFFF; border: 1px solid #E8DEC8; border-radius: 8px; width: 58px; padding: 10px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.03); }
+        .time-box span { font-size: 2em; font-family: 'Cinzel', serif; font-weight: 600; display: block; color: #5C4A3D; }
+        .time-box label { font-size: 0.6em; letter-spacing: 1px; font-family: sans-serif; color: #A39687; font-weight: bold; }
         
-        .footer-img { width: 100%; display: block; min-height: 150px; border-top: 5px solid #c5a059; }
+        /* BOTÓN Y FOOTER */
+        .btn { display: inline-block; background: linear-gradient(135deg, #D4AF37, #B5952F); color: white; text-decoration: none; padding: 18px 25px; border-radius: 30px; font-size: 1em; letter-spacing: 2px; margin-top: 30px; box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3); border: 1px solid #D4AF37; font-weight: 600; transition: background 0.3s; width: 90%; box-sizing: border-box; }
+        .ticket-info { font-size: 1.05em; color: #8B7355; margin-top: 20px; line-height: 1.4; font-style: italic; padding: 0 10px; }
+        .thank-you { font-family: 'Great Vibes', cursive; font-size: 3em; color: #5C4A3D; margin-top: 30px; }
+
+        .gallery-title { font-family: 'Cinzel', serif; font-size: 1.6em; text-align: center; margin: 50px 0 20px; color: #8B7355; letter-spacing: 3px; }
+        .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 0 20px; margin-bottom: 40px; }
+        .gallery img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 8px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); border: 2px solid #fff; }
+        .footer-img { width: 100%; display: block; min-height: 150px; border-top: 5px solid #D4AF37; }
     </style>
 </head>
 <body>
     <div class="mobile-wrapper">
+        
+        <!-- ENCABEZADO -->
         <div class="top-section">
             <img src="fotos/logo.png" alt="Logo Jazmin y Jose" class="logo-img" onerror="this.style.display='none'">
-            
             <p class="quote">"Siempre tuyo, siempre mía, siempre nuestros."<br>Ludwig van Beethoven</p>
-            
             <img src="fotos/pareja.png" alt="Jazmin y Jose" class="img-pareja" onerror="this.src='fotos/pareja.jpg'">
-            
-            <div class="player">
-                <p>DALE PLAY</p>
-                <div class="progress-bar"></div>
-                <div class="controls">
-                    <i class="fas fa-random"></i>
-                    <i class="fas fa-step-backward"></i>
-                    <i class="fas fa-play-circle play-btn" id="play-btn"></i>
-                    <i class="fas fa-step-forward"></i>
-                    <i class="fas fa-sync-alt"></i>
-                </div>
-                <audio id="bg-music" src="cancion.mp3"></audio>
-            </div>
         </div>
 
+        <!-- SOBRE 3D -->
         <div class="css-envelope">
             <div class="env-bottom"></div>
             <div class="env-shadow"></div>
             <div class="env-top"></div>
         </div>
 
+        <!-- TARJETA PRINCIPAL -->
         <div class="card-container">
             <div class="card">
                 <div class="seal"></div>
                 
                 <div class="invite-text">Tenemos el honor de<br>invitarte a nuestra boda</div>
-                
                 <div class="divider"><i class="fas fa-leaf"></i></div>
-                
                 <div class="names">Jazmin <span class="ampersand">&</span> Jose</div>
-                
                 <div class="divider"><i class="fas fa-leaf"></i></div>
                 
                 <div class="date-layout">
@@ -372,26 +342,62 @@
                     <div>8:30 P.M.</div>
                 </div>
 
-                <div class="parents-section">
-                    <div class="parents-title">Nuestros Padres</div>
-                    
-                    <div class="parents-block">
-                        <div class="parents-label">De la novia</div>
-                        <div class="parents-names">Maria Huerta Martinez <span class="ampersand">&</span> Jorge Amador Rivas Avalos</div>
+                <!-- REPRODUCTOR -->
+                <div class="player">
+                    <p>DALE PLAY</p>
+                    <div class="progress-bar"></div>
+                    <div class="controls">
+                        <i class="fas fa-random"></i>
+                        <i class="fas fa-step-backward"></i>
+                        <i class="fas fa-play-circle play-btn" id="play-btn"></i>
+                        <i class="fas fa-step-forward"></i>
+                        <i class="fas fa-sync-alt"></i>
                     </div>
-                    
-                    <div class="parents-block">
-                        <div class="parents-label">Del novio</div>
-                        <div class="parents-names">Xochitl Hernandez Castillo <span class="ampersand">&</span> Primitivo Gonzalez Valadez</div>
-                    </div>
+                    <audio id="bg-music" src="cancion.mp3"></audio>
+                </div>
 
-                    <div class="parents-title" style="margin-top: 35px;">Nuestros Padrinos</div>
-                    
-                    <div class="parents-block">
-                        <div class="parents-names">Veronica Huerta Martinez <span class="ampersand">&</span> Hector Gomez Araiza</div>
+                <!-- PADRES -->
+                <div class="info-block">
+                    <div class="info-title">Nuestros Padres</div>
+                    <div class="info-subtitle">De la novia</div>
+                    <div class="info-text">Maria Huerta Martinez <span class="ampersand">&</span> Jorge Amador Rivas Avalos</div>
+                    <div class="info-subtitle" style="margin-top: 15px;">Del novio</div>
+                    <div class="info-text">Xochitl Hernandez Castillo <span class="ampersand">&</span> Primitivo Gonzalez Valadez</div>
+                </div>
+
+                <!-- PADRINOS -->
+                <div class="info-block">
+                    <div class="info-title">Nuestros Padrinos</div>
+                    <div class="info-text">Veronica Huerta Martinez <span class="ampersand">&</span> Hector Gomez Araiza</div>
+                </div>
+
+                <div class="divider"><i class="fas fa-heart"></i></div>
+
+                <!-- UBICACIÓN -->
+                <div class="info-block">
+                    <div class="info-title">Ubicación</div>
+                    <div class="info-text" style="font-size: 1.2em;">Terraza Isabelas</div>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1096.7580676766788!2d-103.4843673770106!3d20.61687315116379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428aba50ae96d9d%3A0x2b1589400b37b980!2sTerraza%20Isabelas!5e0!3m2!1ses-419!2sus!4v1782061009712!5m2!1ses-419!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
 
+                <!-- DRESS CODE -->
+                <div class="info-block">
+                    <div class="info-title">Dress Code</div>
+                    <div class="info-text" style="font-size: 1.2em;">Formal de playa</div>
+                    <p class="info-paragraph">Favor de evitar blanco, beige o tonos muy claros.</p>
+                </div>
+
+                <!-- REGALOS -->
+                <div class="info-block">
+                    <div class="info-title">Sugerencia de Regalo</div>
+                    <p class="info-paragraph">Tu presencia es el mejor regalo en nuestro día especial. Si además deseas darnos un obsequio podrá ser de la manera tradicional o en lluvia de sobres con efectivo.</p>
+                </div>
+
+                <div class="divider"><i class="fas fa-heart"></i></div>
+
+                <!-- CONTADOR -->
                 <div class="countdown-title">Solo faltan</div>
                 <div class="countdown-container">
                     <div class="time-box"><span id="days">00</span><label>DÍAS</label></div>
@@ -400,20 +406,15 @@
                     <div class="time-box"><span id="seconds">00</span><label>SEG</label></div>
                 </div>
 
+                <!-- RSVP -->
                 <a href="https://forms.gle/RDXqBwCKf3uMwntF6" target="_blank" class="btn">CONFIRMAR ASISTENCIA</a>
-                
                 <p class="ticket-info">Una vez confirmada su asistencia, les haremos llegar sus boletos de acceso para acompañarnos en este día tan especial.</p>
+                
+                <div class="thank-you">¡Muchas gracias!</div>
             </div>
         </div>
 
-        <div class="location-section">
-            <div class="section-title">UBICACIÓN</div>
-            <div class="location-name">Terraza Isabelas</div>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1096.7580676766788!2d-103.4843673770106!3d20.61687315116379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428aba50ae96d9d%3A0x2b1589400b37b980!2sTerraza%20Isabelas!5e0!3m2!1ses-419!2sus!4v1782061009712!5m2!1ses-419!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
-
+        <!-- GALERÍA -->
         <div class="gallery-title">NUESTROS MOMENTOS</div>
         <div class="gallery">
             <img src="fotos/foto2.jpeg" alt="Foto 2" onerror="this.style.display='none'">
