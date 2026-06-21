@@ -11,17 +11,17 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #F9F6F0;
-            background-image: radial-gradient(#EAE0D5 1px, transparent 1px);
+            background-color: #F9F6F0; /* Beige muy claro */
+            background-image: radial-gradient(#EAE0D5 1px, transparent 1px); /* Puntos beige */
             background-size: 20px 20px;
             font-family: 'Cormorant Garamond', serif;
-            color: #5C4A3D;
+            color: #5C4A3D; /* Café/Dorado oscuro para textos */
         }
         .mobile-wrapper {
             width: 100%;
             max-width: 480px;
             margin: 0 auto;
-            background-color: #FFFFFF;
+            background-color: #FFFFFF; /* Blanco puro */
             position: relative;
             box-shadow: 0 0 30px rgba(0,0,0,0.1);
             overflow-x: hidden;
@@ -33,7 +33,7 @@
             text-align: center;
             position: relative;
             z-index: 2;
-            border-bottom: 3px solid #D4AF37;
+            border-bottom: 3px solid #D4AF37; /* Dorado */
         }
         
         .logo-img {
@@ -49,7 +49,7 @@
             font-style: italic;
             font-size: 1.4em;
             margin: 25px auto 30px;
-            color: #8B7355;
+            color: #8B7355; /* Dorado oscuro */
             line-height: 1.4;
         }
         .img-pareja {
@@ -61,6 +61,7 @@
             box-shadow: 0 6px 15px rgba(0,0,0,0.08);
         }
         
+        /* REPRODUCTOR */
         .player { margin: 30px auto 0; padding: 20px 10px; background: #FAF8F5; border-radius: 10px; border: 1px solid #E8DEC8; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
         .player p { letter-spacing: 3px; margin-top: 0; margin-bottom: 15px; font-size: 1.1em; font-weight: 600; color: #8B7355; }
         .progress-bar { width: 80%; height: 3px; background: #E8DEC8; margin: 0 auto 20px; position: relative; border-radius: 2px; }
@@ -70,12 +71,13 @@
         .play-btn { font-size: 2.5em; cursor: pointer; color: #D4AF37; transition: transform 0.2s; }
         .play-btn:active { transform: scale(0.9); }
 
+        /* SOBRE BEIGE 3D (Angosto para efecto capas) */
         .css-envelope {
             position: relative;
             width: 90%;
             max-width: 430px;
             height: 180px;
-            background-color: #DCD0C0;
+            background-color: #DCD0C0; /* Interior oscuro */
             z-index: 1;
             margin: 40px auto 0;
             border-radius: 4px 4px 0 0;
@@ -84,28 +86,29 @@
         .env-bottom {
             position: absolute;
             bottom: 0; left: 0; width: 100%; height: 100%;
-            background-color: #E8DEC8;
+            background-color: #E8DEC8; /* Solapa inferior */
             clip-path: polygon(0 100%, 100% 100%, 100% 15%, 50% 75%, 0 15%);
             border-radius: 0 0 4px 4px;
         }
         .env-shadow {
             position: absolute;
             top: 4px; left: 0; width: 100%; height: 85%;
-            background-color: rgba(0,0,0,0.12);
+            background-color: rgba(0,0,0,0.12); /* Sombra */
             clip-path: polygon(0 0, 100% 0, 50% 100%);
             z-index: 1;
         }
         .env-top {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 85%;
-            background-color: #F4EFE6;
+            background-color: #F4EFE6; /* Solapa superior */
             clip-path: polygon(0 0, 100% 0, 50% 100%);
             z-index: 2;
         }
 
+        /* TARJETA BLANCA */
         .card-container {
             position: relative;
-            width: 82%;
+            width: 82%; /* Más angosta que el sobre */
             max-width: 390px;
             margin: -90px auto 0;
             z-index: 3;
@@ -126,7 +129,7 @@
             left: 8px;
             right: 8px;
             bottom: 8px;
-            border: 1px solid #D4AF37;
+            border: 1px solid #D4AF37; /* Borde interno dorado */
             pointer-events: none;
             opacity: 0.5;
         }
@@ -176,6 +179,8 @@
             color: #8B7355;
             font-weight: 600;
         }
+        
+        /* NOMBRES */
         .names {
             font-family: 'Great Vibes', cursive;
             font-size: 4.5em;
@@ -188,14 +193,7 @@
             justify-content: center;
             flex-wrap: wrap;
         }
-        .ampersand {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 0.8em;
-            color: #D4AF37;
-            margin: 0 10px;
-            font-weight: 600;
-        }
+
         .divider {
             display: flex;
             align-items: center;
@@ -236,7 +234,7 @@
         .date-center .day-num { font-size: 2.8em; line-height: 1; margin: 5px 0; font-family: 'Cinzel', serif; color: #5C4A3D; }
         .date-center .year { font-size: 0.9em; letter-spacing: 3px; }
         
-        /* ESTILOS DE LOS PADRES */
+        /* PADRES */
         .parents-section {
             margin: 10px 0 40px;
         }
@@ -271,6 +269,7 @@
         .time-box span { font-size: 2em; font-family: 'Cinzel', serif; font-weight: 600; display: block; color: #5C4A3D; }
         .time-box label { font-size: 0.6em; letter-spacing: 1px; font-family: sans-serif; color: #A39687; font-weight: bold; }
         
+        /* BOTÓN DORADO */
         .btn { display: inline-block; background: linear-gradient(135deg, #D4AF37, #B5952F); color: white; text-decoration: none; padding: 18px 25px; border-radius: 30px; font-size: 1em; letter-spacing: 2px; margin-top: 40px; box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3); border: 1px solid #D4AF37; font-weight: 600; transition: background 0.3s; width: 90%; box-sizing: border-box; }
         
         .ticket-info {
@@ -282,6 +281,7 @@
             padding: 0 10px;
         }
 
+        /* UBICACIÓN */
         .location-section {
             padding: 0 20px;
             margin-top: 50px;
@@ -336,7 +336,7 @@
                 <p>DALE PLAY</p>
                 <div class="progress-bar"></div>
                 <div class="controls">
-                        <i class="fas fa-random"></i>
+                    <i class="fas fa-random"></i>
                     <i class="fas fa-step-backward"></i>
                     <i class="fas fa-play-circle play-btn" id="play-btn"></i>
                     <i class="fas fa-step-forward"></i>
@@ -360,7 +360,7 @@
                 
                 <div class="divider"><i class="fas fa-leaf"></i></div>
                 
-                <div class="names">Jazmin <span class="ampersand">&</span> Jose</div>
+                <div class="names">Jazmin & Jose</div>
                 
                 <div class="divider"><i class="fas fa-leaf"></i></div>
                 
@@ -374,18 +374,17 @@
                     <div>8:30 P.M.</div>
                 </div>
 
-                <!-- SECCIÓN DE LOS PADRES -->
                 <div class="parents-section">
                     <div class="parents-title">Nuestros Padres</div>
                     
                     <div class="parents-block">
                         <div class="parents-label">De la novia</div>
-                        <div class="parents-names">Guadalupe Velazco <span class="ampersand">&</span> Juan Quintana</div>
+                        <div class="parents-names">Guadalupe Velazco & Juan Quintana</div>
                     </div>
                     
                     <div class="parents-block">
                         <div class="parents-label">Del novio</div>
-                        <div class="parents-names">Esther Uribe <span class="ampersand">&</span> Ramiro Medina</div>
+                        <div class="parents-names">Esther Uribe & Ramiro Medina</div>
                     </div>
                 </div>
 
@@ -463,7 +462,3 @@
             document.getElementById("hours").innerText = pad(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
             document.getElementById("minutes").innerText = pad(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
             document.getElementById("seconds").innerText = pad(Math.floor((distance % (1000 * 60)) / 1000));
-        }, 1000);
-    </script>
-</body>
-</html>
