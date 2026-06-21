@@ -32,19 +32,18 @@
         /* ENCABEZADO */
         .top-section {
             background-color: #FFFFFF;
-            padding: 50px 20px 30px;
+            padding: 50px 20px 40px;
             text-align: center;
             position: relative;
             z-index: 2;
-            border-bottom: 3px solid #D4AF37;
         }
         .logo-img {
             width: 100%;
-            max-width: 160px;
+            max-width: 180px;
             height: auto;
-            margin: 0 auto 30px;
+            margin: 0 auto 25px;
             display: block;
-            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.05));
+            filter: drop-shadow(0px 2px 5px rgba(0,0,0,0.05));
         }
         .img-pareja {
             width: 100%;
@@ -53,6 +52,8 @@
             object-fit: cover;
             border-radius: 8px;
             box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            position: relative;
+            z-index: 2;
         }
 
         /* SOBRE BEIGE 3D */
@@ -62,10 +63,10 @@
             max-width: 440px;
             height: 180px;
             background-color: #DCD0C0;
-            z-index: 1;
-            margin: 40px auto 0;
+            z-index: 3;
+            margin: -30px auto 0; /* Sube un poco para superponerse a la foto */
             border-radius: 4px 4px 0 0;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.08);
         }
         .env-bottom {
             position: absolute;
@@ -95,7 +96,7 @@
             width: 84%;
             max-width: 400px;
             margin: -90px auto 0;
-            z-index: 3;
+            z-index: 4;
         }
         .card {
             background-color: #FFFFFF;
@@ -230,6 +231,17 @@
         .play-btn { font-size: 2.5em; cursor: pointer; color: #D4AF37; transition: transform 0.2s; }
         .play-btn:active { transform: scale(0.9); }
 
+        /* CONTADOR */
+        .countdown-title { font-family: 'Great Vibes', cursive; font-size: 3.5em; margin-bottom: 20px; color: #5C4A3D; }
+        .countdown-container { display: flex; justify-content: center; gap: 8px; margin-bottom: 10px; }
+        .time-box { background: #FFFFFF; border: 1px solid #E8DEC8; border-radius: 8px; width: 58px; padding: 10px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.03); }
+        .time-box span { font-size: 2em; font-family: 'Cinzel', serif; font-weight: 600; display: block; color: #5C4A3D; }
+        .time-box label { font-size: 0.6em; letter-spacing: 1px; font-family: sans-serif; color: #A39687; font-weight: bold; }
+
+        /* BOTÓN DE CONFIRMACIÓN */
+        .btn { display: inline-block; background: linear-gradient(135deg, #D4AF37, #B5952F); color: white; text-decoration: none; padding: 18px 25px; border-radius: 30px; font-size: 1em; letter-spacing: 2px; margin-top: 20px; box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3); border: 1px solid #D4AF37; font-weight: 600; transition: background 0.3s; width: 90%; box-sizing: border-box; }
+        .ticket-info { font-size: 1.05em; color: #8B7355; margin-top: 20px; margin-bottom: 40px; line-height: 1.4; font-style: italic; padding: 0 10px; }
+
         /* IMÁGENES INTERCALADAS */
         .section-img {
             width: 100%;
@@ -240,9 +252,6 @@
             box-shadow: 0 6px 15px rgba(0,0,0,0.1);
             margin: 35px 0;
             border: 2px solid #E8DEC8;
-        }
-        .portrait-img {
-            aspect-ratio: 4 / 5;
         }
 
         /* BLOQUES DE INFORMACIÓN */
@@ -268,7 +277,7 @@
             display: block;
         }
         
-        /* NUEVO DRESS CODE (Estilo Revista) */
+        /* DRESS CODE ESTILO REVISTA */
         .dress-code-wrapper {
             display: flex;
             align-items: center;
@@ -333,7 +342,6 @@
             border-radius: 50%;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        /* Colores de la paleta basados en tu imagen */
         .c1 { background-color: #8d9b6e; }
         .c2 { background-color: #d1b3d4; }
         .c3 { background-color: #f0e6b3; }
@@ -375,14 +383,6 @@
             font-weight: 600;
         }
 
-        .info-text {
-            font-size: 1.2em;
-            font-style: italic;
-            color: #5C4A3D;
-            font-weight: 600;
-            line-height: 1.4;
-            margin-bottom: 15px;
-        }
         .info-paragraph {
             font-size: 1.1em;
             color: #5C4A3D;
@@ -414,32 +414,21 @@
             margin: 40px 10px;
             line-height: 1.2;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+            text-align: center;
         }
 
-        /* CONTADOR */
-        .countdown-title { font-family: 'Great Vibes', cursive; font-size: 3.5em; margin-bottom: 20px; color: #5C4A3D; }
-        .countdown-container { display: flex; justify-content: center; gap: 8px; margin-bottom: 10px; }
-        .time-box { background: #FFFFFF; border: 1px solid #E8DEC8; border-radius: 8px; width: 58px; padding: 10px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.03); }
-        .time-box span { font-size: 2em; font-family: 'Cinzel', serif; font-weight: 600; display: block; color: #5C4A3D; }
-        .time-box label { font-size: 0.6em; letter-spacing: 1px; font-family: sans-serif; color: #A39687; font-weight: bold; }
-        
-        /* BOTÓN Y FOOTER */
-        .btn { display: inline-block; background: linear-gradient(135deg, #D4AF37, #B5952F); color: white; text-decoration: none; padding: 18px 25px; border-radius: 30px; font-size: 1em; letter-spacing: 2px; margin-top: 40px; box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3); border: 1px solid #D4AF37; font-weight: 600; transition: background 0.3s; width: 90%; box-sizing: border-box; }
-        .ticket-info { font-size: 1.05em; color: #8B7355; margin-top: 20px; line-height: 1.4; font-style: italic; padding: 0 10px; }
-        .thank-you { font-family: 'Great Vibes', cursive; font-size: 3em; color: #5C4A3D; margin-top: 30px; }
+        .thank-you { font-family: 'Great Vibes', cursive; font-size: 3em; color: #5C4A3D; margin-top: 30px; text-align: center; }
 
-        .gallery-title { font-family: 'Cinzel', serif; font-size: 1.6em; text-align: center; margin: 50px 0 20px; color: #8B7355; letter-spacing: 3px; }
-        .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 0 20px; margin-bottom: 40px; }
-        .gallery img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 8px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); border: 2px solid #fff; }
-        .footer-img { width: 100%; display: block; min-height: 150px; border-top: 5px solid #D4AF37; object-fit: cover; }
+        .footer-img { width: 100%; display: block; min-height: 150px; border-top: 5px solid #D4AF37; margin-top: 40px; object-fit: cover; }
     </style>
 </head>
 <body>
     <div class="mobile-wrapper">
         
-        <!-- ENCABEZADO CON LOGO -->
+        <!-- ENCABEZADO CON LOGO Y FOTO PRINCIPAL -->
         <div class="top-section">
             <img src="fotos/logo.png" alt="Logo Jazmin y Jose" class="logo-img" onerror="this.style.display='none'">
+            <img src="fotos/pareja.png" alt="Jazmin y Jose" class="img-pareja" onerror="this.src='fotos/pareja.jpg'">
         </div>
 
         <!-- SOBRE 3D -->
@@ -527,17 +516,14 @@
                     </div>
                 </div>
 
-                <!-- FOTO PRINCIPAL -->
-                <img src="fotos/pareja.png" alt="Jazmin y Jose" class="section-img portrait-img" onerror="this.src='fotos/pareja.jpg'">
-
                 <div class="divider"><i class="fas fa-heart"></i></div>
 
                 <!-- CEREMONIA RELIGIOSA -->
                 <div class="info-block">
                     <i class="fas fa-church icon-gold"></i>
                     <div class="info-title">Ceremonia Religiosa</div>
-                    <div class="info-text">6:00 p.m.</div>
-                    <div class="info-text" style="font-size: 1.1em;">Parroquia El Expiatorio Eucarístico de Guadalajara</div>
+                    <div class="info-text" style="font-size: 1.1em; color: #A39687; font-style: normal; text-transform: uppercase; letter-spacing: 2px;">6:00 p.m.</div>
+                    <div class="info-text" style="font-size: 1.1em; margin-top: 10px;">Parroquia El Expiatorio Eucarístico de Guadalajara</div>
                     <div class="map-container">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7465.797660419492!2d-103.36154202355713!3d20.67369458088825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ae0283dde105%3A0x2319ae110b6fa64e!2sParroquia%20El%20Expiatorio%20Eucar%C3%ADstico%20de%20Guadalajara!5e0!3m2!1ses-419!2sus!4v1782067922612!5m2!1ses-419!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
@@ -547,14 +533,14 @@
                 <div class="info-block">
                     <i class="fas fa-glass-cheers icon-gold"></i>
                     <div class="info-title">Recepción</div>
-                    <div class="info-text">A partir de las 8:30 p.m.</div>
-                    <div class="info-text" style="font-size: 1.1em;">Terraza Isabelas</div>
+                    <div class="info-text" style="font-size: 1.1em; color: #A39687; font-style: normal; text-transform: uppercase; letter-spacing: 2px;">A partir de las 8:30 p.m.</div>
+                    <div class="info-text" style="font-size: 1.1em; margin-top: 10px;">Terraza Isabelas</div>
                     <div class="map-container">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1096.7580676766788!2d-103.4843673770106!3d20.61687315116379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428aba50ae96d9d%3A0x2b1589400b37b980!2sTerraza%20Isabelas!5e0!3m2!1ses-419!2sus!4v1782061009712!5m2!1ses-419!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
 
-                <!-- DRESS CODE ESTILO REVISTA -->
+                <!-- DRESS CODE ESTILO REVISTA CON FOTO 6 -->
                 <div class="dress-code-wrapper">
                     <div class="dress-left">
                         <img src="fotos/foto6.jpeg" alt="Dress Code" onerror="this.style.display='none'">
@@ -565,7 +551,7 @@
                     <div class="dress-right">
                         <div class="info-title">FORMAL DE<br>PLAYA</div>
                         
-                        <!-- Opcional: Si quieres subir un collage de ropa, llámalo ropa.png y ponlo en la carpeta fotos -->
+                        <!-- Opcional: Imagen de paleta de colores o ropa -->
                         <img src="fotos/ropa.png" alt="Ejemplo ropa" class="palette-img" onerror="this.style.display='none'">
                         
                         <div class="color-circles">
@@ -601,16 +587,7 @@
             </div>
         </div>
 
-        <!-- GALERÍA (Sin fotos 4, 5, 6 y 8) -->
-        <div class="gallery-title" style="margin-top: 50px;">NUESTROS MOMENTOS</div>
-        <div class="gallery">
-            <img src="fotos/foto2.jpeg" alt="Foto 2" onerror="this.style.display='none'">
-            <img src="fotos/foto3.jpeg" alt="Foto 3" onerror="this.style.display='none'">
-            <img src="fotos/foto7.jpeg" alt="Foto 7" onerror="this.style.display='none'">
-            <img src="fotos/foto9.jpeg" alt="Foto 9" onerror="this.style.display='none'">
-            <img src="fotos/foto10.jpeg" alt="Foto 10" onerror="this.style.display='none'">
-        </div>
-
+        <!-- FOOTER -->
         <img src="fotos/footer.jpg" alt="Footer" class="footer-img" onerror="this.style.display='none'">
     </div>
 
