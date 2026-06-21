@@ -12,17 +12,17 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #F9F6F0; /* Beige muy claro de fondo */
+            background-color: #F9F6F0;
             background-image: radial-gradient(#EAE0D5 1px, transparent 1px);
             background-size: 20px 20px;
             font-family: 'Cormorant Garamond', serif;
-            color: #5C4A3D; /* Café oscuro elegante para textos */
+            color: #5C4A3D;
         }
         .mobile-wrapper {
             width: 100%;
             max-width: 480px;
             margin: 0 auto;
-            background-color: #FFFFFF; /* Fondo principal blanco */
+            background-color: #FFFFFF;
             position: relative;
             box-shadow: 0 0 30px rgba(0,0,0,0.1);
             overflow-x: hidden;
@@ -36,22 +36,15 @@
             text-align: center;
             position: relative;
             z-index: 2;
-            border-bottom: 3px solid #D4AF37; /* Dorado */
+            border-bottom: 3px solid #D4AF37;
         }
         .logo-img {
             width: 100%;
             max-width: 160px;
             height: auto;
-            margin: 0 auto;
+            margin: 0 auto 30px;
             display: block;
             filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.05));
-        }
-        .quote {
-            font-style: italic;
-            font-size: 1.4em;
-            margin: 25px auto 30px;
-            color: #8B7355; /* Dorado oscuro */
-            line-height: 1.4;
         }
         .img-pareja {
             width: 100%;
@@ -62,30 +55,13 @@
             box-shadow: 0 6px 15px rgba(0,0,0,0.08);
         }
 
-        /* REPRODUCTOR DEBAJO DE LA FOTO PRINCIPAL */
-        .player { 
-            margin: 30px auto 10px; 
-            padding: 20px 10px; 
-            background: #FAF8F5; 
-            border-radius: 10px; 
-            border: 1px solid #E8DEC8; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03); 
-        }
-        .player p { letter-spacing: 3px; margin-top: 0; margin-bottom: 15px; font-size: 1.1em; font-weight: 600; color: #8B7355; }
-        .progress-bar { width: 80%; height: 3px; background: #E8DEC8; margin: 0 auto 20px; position: relative; border-radius: 2px; }
-        .progress-bar::after { content: ''; position: absolute; left: 30%; top: -4px; width: 12px; height: 12px; background: #D4AF37; border-radius: 50%; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-        .progress-bar::before { content: ''; position: absolute; left: 0; top: 0; width: 30%; height: 100%; background: #D4AF37; border-radius: 2px; }
-        .controls { display: flex; justify-content: center; align-items: center; gap: 25px; font-size: 1.2em; color: #8B7355; }
-        .play-btn { font-size: 2.5em; cursor: pointer; color: #D4AF37; transition: transform 0.2s; }
-        .play-btn:active { transform: scale(0.9); }
-
         /* SOBRE BEIGE 3D */
         .css-envelope {
             position: relative;
             width: 92%;
             max-width: 440px;
             height: 180px;
-            background-color: #DCD0C0; /* Interior del sobre (Beige oscuro) */
+            background-color: #DCD0C0;
             z-index: 1;
             margin: 40px auto 0;
             border-radius: 4px 4px 0 0;
@@ -94,21 +70,21 @@
         .env-bottom {
             position: absolute;
             bottom: 0; left: 0; width: 100%; height: 100%;
-            background-color: #E8DEC8; /* Solapa inferior (Beige medio) */
+            background-color: #E8DEC8;
             clip-path: polygon(0 100%, 100% 100%, 100% 15%, 50% 75%, 0 15%);
             border-radius: 0 0 4px 4px;
         }
         .env-shadow {
             position: absolute;
             top: 4px; left: 0; width: 100%; height: 85%;
-            background-color: rgba(0,0,0,0.1); /* Sombra 3D */
+            background-color: rgba(0,0,0,0.1);
             clip-path: polygon(0 0, 100% 0, 50% 100%);
             z-index: 1;
         }
         .env-top {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 85%;
-            background-color: #F4EFE6; /* Solapa superior (Beige claro) */
+            background-color: #F4EFE6;
             clip-path: polygon(0 0, 100% 0, 50% 100%);
             z-index: 2;
         }
@@ -134,7 +110,7 @@
             content: '';
             position: absolute;
             top: 8px; left: 8px; right: 8px; bottom: 8px;
-            border: 1px solid #D4AF37; /* Borde interno dorado */
+            border: 1px solid #D4AF37;
             pointer-events: none;
             opacity: 0.5;
         }
@@ -243,10 +219,36 @@
         .date-center .month { font-size: 1em; letter-spacing: 3px; }
         .date-center .day-num { font-size: 2.8em; line-height: 1; margin: 5px 0; font-family: 'Cinzel', serif; color: #5C4A3D; }
         .date-center .year { font-size: 0.9em; letter-spacing: 3px; }
+        
+        /* REPRODUCTOR */
+        .player { margin: 0 auto 40px; padding: 20px 10px; background: #FAF8F5; border-radius: 10px; border: 1px solid #E8DEC8; }
+        .player p { letter-spacing: 3px; margin-top: 0; margin-bottom: 15px; font-size: 1.1em; font-weight: 600; color: #8B7355; }
+        .progress-bar { width: 80%; height: 3px; background: #E8DEC8; margin: 0 auto 20px; position: relative; border-radius: 2px; }
+        .progress-bar::after { content: ''; position: absolute; left: 30%; top: -4px; width: 12px; height: 12px; background: #D4AF37; border-radius: 50%; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .progress-bar::before { content: ''; position: absolute; left: 0; top: 0; width: 30%; height: 100%; background: #D4AF37; border-radius: 2px; }
+        .controls { display: flex; justify-content: center; align-items: center; gap: 25px; font-size: 1.2em; color: #8B7355; }
+        .play-btn { font-size: 2.5em; cursor: pointer; color: #D4AF37; transition: transform 0.2s; }
+        .play-btn:active { transform: scale(0.9); }
 
-        /* BLOQUES DE INFORMACIÓN (Padres, Dress Code, Regalos) */
+        /* IMÁGENES INTERCALADAS */
+        .section-img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            margin: 35px 0;
+            border: 2px solid #E8DEC8;
+        }
+
+        /* BLOQUES DE INFORMACIÓN */
         .info-block {
-            margin-bottom: 35px;
+            margin-bottom: 40px;
+            padding: 25px 15px;
+            background-color: #FAF8F5;
+            border-radius: 8px;
+            border: 1px solid #E8DEC8;
         }
         .info-title {
             font-family: 'Cinzel', serif;
@@ -256,23 +258,29 @@
             margin-bottom: 15px;
             text-transform: uppercase;
         }
+        .icon-gold {
+            font-size: 2.2em;
+            color: #D4AF37;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        /* PADRES Y PADRINOS */
         .info-subtitle {
             font-size: 0.85em;
             letter-spacing: 2px;
             color: #A39687;
             text-transform: uppercase;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
             font-weight: 600;
         }
-        
-        /* ESTILO PARA NOMBRES DE PADRES (Mujer arriba, hombre abajo) */
         .parents-names {
             font-size: 1.4em;
             font-style: italic;
             color: #5C4A3D;
             font-weight: 600;
             line-height: 1.3;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         .ampersand-vertical {
             font-family: 'Cormorant Garamond', serif;
@@ -285,7 +293,7 @@
         }
 
         .info-text {
-            font-size: 1.3em;
+            font-size: 1.2em;
             font-style: italic;
             color: #5C4A3D;
             font-weight: 600;
@@ -299,13 +307,13 @@
             padding: 0 10px;
         }
 
-        /* MAPA */
+        /* MAPAS */
         .map-container {
             width: 100%;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-            border: 2px solid #E8DEC8;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            border: 2px solid #fff;
             margin-top: 15px;
         }
         .map-container iframe {
@@ -313,6 +321,16 @@
             height: 250px;
             display: block;
             border: none;
+        }
+
+        /* FRASE FINAL */
+        .final-quote {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.8em;
+            color: #D4AF37;
+            margin: 40px 10px;
+            line-height: 1.2;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
         }
 
         /* CONTADOR */
@@ -323,7 +341,7 @@
         .time-box label { font-size: 0.6em; letter-spacing: 1px; font-family: sans-serif; color: #A39687; font-weight: bold; }
         
         /* BOTÓN Y FOOTER */
-        .btn { display: inline-block; background: linear-gradient(135deg, #D4AF37, #B5952F); color: white; text-decoration: none; padding: 18px 25px; border-radius: 30px; font-size: 1em; letter-spacing: 2px; margin-top: 30px; box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3); border: 1px solid #D4AF37; font-weight: 600; transition: background 0.3s; width: 90%; box-sizing: border-box; }
+        .btn { display: inline-block; background: linear-gradient(135deg, #D4AF37, #B5952F); color: white; text-decoration: none; padding: 18px 25px; border-radius: 30px; font-size: 1em; letter-spacing: 2px; margin-top: 40px; box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3); border: 1px solid #D4AF37; font-weight: 600; transition: background 0.3s; width: 90%; box-sizing: border-box; }
         .ticket-info { font-size: 1.05em; color: #8B7355; margin-top: 20px; line-height: 1.4; font-style: italic; padding: 0 10px; }
         .thank-you { font-family: 'Great Vibes', cursive; font-size: 3em; color: #5C4A3D; margin-top: 30px; }
 
@@ -339,22 +357,7 @@
         <!-- ENCABEZADO -->
         <div class="top-section">
             <img src="fotos/logo.png" alt="Logo Jazmin y Jose" class="logo-img" onerror="this.style.display='none'">
-            <p class="quote">"Siempre tuyo, siempre mía, siempre nuestros."<br>Ludwig van Beethoven</p>
             <img src="fotos/pareja.png" alt="Jazmin y Jose" class="img-pareja" onerror="this.src='fotos/pareja.jpg'">
-            
-            <!-- REPRODUCTOR DEBAJO DE LA FOTO -->
-            <div class="player">
-                <p>DALE PLAY</p>
-                <div class="progress-bar"></div>
-                <div class="controls">
-                    <i class="fas fa-random"></i>
-                    <i class="fas fa-step-backward"></i>
-                    <i class="fas fa-play-circle play-btn" id="play-btn"></i>
-                    <i class="fas fa-step-forward"></i>
-                    <i class="fas fa-sync-alt"></i>
-                </div>
-                <audio id="bg-music" src="cancion.mp3"></audio>
-            </div>
         </div>
 
         <!-- SOBRE 3D -->
@@ -384,7 +387,24 @@
                     <div>8:30 P.M.</div>
                 </div>
 
-                <!-- PADRES -->
+                <!-- REPRODUCTOR -->
+                <div class="player">
+                    <p>DALE PLAY</p>
+                    <div class="progress-bar"></div>
+                    <div class="controls">
+                        <i class="fas fa-random"></i>
+                        <i class="fas fa-step-backward"></i>
+                        <i class="fas fa-play-circle play-btn" id="play-btn"></i>
+                        <i class="fas fa-step-forward"></i>
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <audio id="bg-music" src="cancion.mp3"></audio>
+                </div>
+
+                <!-- FOTO 8 -->
+                <img src="fotos/foto8.jpeg" alt="Nuestra foto" class="section-img" onerror="this.style.display='none'">
+
+                <!-- PADRES Y PADRINOS -->
                 <div class="info-block">
                     <div class="info-title">Nuestros Padres</div>
                     <div class="info-subtitle">De la novia</div>
@@ -393,18 +413,15 @@
                         <span class="ampersand-vertical">&</span> 
                         Jorge Amador Rivas Avalos
                     </div>
-                    <div class="info-subtitle" style="margin-top: 15px;">Del novio</div>
-                    <div class="parents-names">
+                    <div class="info-subtitle">Del novio</div>
+                    <div class="parents-names" style="margin-bottom: 35px;">
                         Xochitl Hernandez Castillo 
                         <span class="ampersand-vertical">&</span> 
                         Primitivo Gonzalez Valadez
                     </div>
-                </div>
 
-                <!-- PADRINOS -->
-                <div class="info-block">
                     <div class="info-title">Nuestros Padrinos</div>
-                    <div class="parents-names">
+                    <div class="parents-names" style="margin-bottom: 0;">
                         Veronica Huerta Martinez 
                         <span class="ampersand-vertical">&</span> 
                         Hector Gomez Araiza
@@ -413,26 +430,43 @@
 
                 <div class="divider"><i class="fas fa-heart"></i></div>
 
-                <!-- UBICACIÓN -->
+                <!-- CEREMONIA RELIGIOSA -->
                 <div class="info-block">
-                    <div class="info-title">Ubicación</div>
-                    <div class="info-text" style="font-size: 1.2em;">Terraza Isabelas</div>
+                    <i class="fas fa-church icon-gold"></i>
+                    <div class="info-title">Ceremonia Religiosa</div>
+                    <div class="info-text">Parroquia El Expiatorio Eucarístico de Guadalajara</div>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7465.797660419492!2d-103.36154202355713!3d20.67369458088825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ae0283dde105%3A0x2319ae110b6fa64e!2sParroquia%20El%20Expiatorio%20Eucar%C3%ADstico%20de%20Guadalajara!5e0!3m2!1ses-419!2sus!4v1782067922612!5m2!1ses-419!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+                <!-- RECEPCIÓN -->
+                <div class="info-block">
+                    <i class="fas fa-glass-cheers icon-gold"></i>
+                    <div class="info-title">Recepción</div>
+                    <div class="info-text">A partir de las 8:30 p.m.</div>
+                    <div class="info-text" style="font-size: 1.1em;">Terraza Isabelas</div>
                     <div class="map-container">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1096.7580676766788!2d-103.4843673770106!3d20.61687315116379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428aba50ae96d9d%3A0x2b1589400b37b980!2sTerraza%20Isabelas!5e0!3m2!1ses-419!2sus!4v1782061009712!5m2!1ses-419!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
 
-                <!-- DRESS CODE -->
-                <div class="info-block">
-                    <div class="info-title">Dress Code</div>
-                    <div class="info-text" style="font-size: 1.2em;">Formal de playa</div>
-                    <p class="info-paragraph">Favor de evitar blanco, beige o tonos muy claros.</p>
-                </div>
+                <!-- FOTO 5 -->
+                <img src="fotos/foto5.jpeg" alt="Nuestra foto" class="section-img" onerror="this.style.display='none'">
 
                 <!-- REGALOS -->
                 <div class="info-block">
+                    <i class="fas fa-gift icon-gold"></i>
                     <div class="info-title">Sugerencia de Regalo</div>
                     <p class="info-paragraph">Tu presencia es el mejor regalo en nuestro día especial. Si además deseas darnos un obsequio podrá ser de la manera tradicional o en lluvia de sobres con efectivo.</p>
+                </div>
+
+                <!-- FOTO 4 -->
+                <img src="fotos/foto4.jpeg" alt="Nuestra foto" class="section-img" onerror="this.style.display='none'">
+
+                <!-- FRASE FINAL -->
+                <div class="final-quote">
+                    "Toda aventura comienza con un 'sí', y el nuestro es para siempre."
                 </div>
 
                 <div class="divider"><i class="fas fa-heart"></i></div>
@@ -454,16 +488,13 @@
             </div>
         </div>
 
-        <!-- GALERÍA -->
-        <div class="gallery-title">NUESTROS MOMENTOS</div>
+        <!-- GALERÍA (Sin fotos 4, 5 y 8) -->
+        <div class="gallery-title" style="margin-top: 50px;">NUESTROS MOMENTOS</div>
         <div class="gallery">
             <img src="fotos/foto2.jpeg" alt="Foto 2" onerror="this.style.display='none'">
             <img src="fotos/foto3.jpeg" alt="Foto 3" onerror="this.style.display='none'">
-            <img src="fotos/foto4.jpeg" alt="Foto 4" onerror="this.style.display='none'">
-            <img src="fotos/foto5.jpeg" alt="Foto 5" onerror="this.style.display='none'">
             <img src="fotos/foto6.jpeg" alt="Foto 6" onerror="this.style.display='none'">
             <img src="fotos/foto7.jpeg" alt="Foto 7" onerror="this.style.display='none'">
-            <img src="fotos/foto8.jpeg" alt="Foto 8" onerror="this.style.display='none'">
             <img src="fotos/foto9.jpeg" alt="Foto 9" onerror="this.style.display='none'">
             <img src="fotos/foto10.jpeg" alt="Foto 10" onerror="this.style.display='none'">
         </div>
