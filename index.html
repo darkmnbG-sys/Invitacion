@@ -8,28 +8,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* PALETA DE COLORES: Blanco, Beige y Dorado */
+        /* PALETA ESTRICTA: Blanco, Beige y Dorado */
         body {
             margin: 0;
             padding: 0;
-            background-color: #F9F6F0; /* Beige muy claro */
+            background-color: #F9F6F0; /* Beige muy claro de fondo */
             background-image: radial-gradient(#EAE0D5 1px, transparent 1px);
             background-size: 20px 20px;
             font-family: 'Cormorant Garamond', serif;
-            color: #5C4A3D; /* Café/Dorado oscuro para textos */
+            color: #5C4A3D; /* Café oscuro elegante para textos */
         }
         .mobile-wrapper {
             width: 100%;
             max-width: 480px;
             margin: 0 auto;
-            background-color: #FFFFFF; /* Blanco puro */
+            background-color: #FFFFFF; /* Fondo principal blanco */
             position: relative;
             box-shadow: 0 0 30px rgba(0,0,0,0.1);
             overflow-x: hidden;
             min-height: 100vh;
         }
         
-        /* ENCABEZADO Y FOTO */
+        /* ENCABEZADO */
         .top-section {
             background-color: #FFFFFF;
             padding: 50px 20px 20px;
@@ -49,7 +49,7 @@
             font-style: italic;
             font-size: 1.4em;
             margin: 25px auto 30px;
-            color: #8B7355;
+            color: #8B7355; /* Dorado oscuro */
             line-height: 1.4;
         }
         .img-pareja {
@@ -67,7 +67,7 @@
             width: 92%;
             max-width: 440px;
             height: 180px;
-            background-color: #DCD0C0; /* Interior beige oscuro */
+            background-color: #DCD0C0; /* Interior del sobre (Beige oscuro) */
             z-index: 1;
             margin: 30px auto 0;
             border-radius: 4px 4px 0 0;
@@ -76,21 +76,21 @@
         .env-bottom {
             position: absolute;
             bottom: 0; left: 0; width: 100%; height: 100%;
-            background-color: #E8DEC8; /* Solapa inferior */
+            background-color: #E8DEC8; /* Solapa inferior (Beige medio) */
             clip-path: polygon(0 100%, 100% 100%, 100% 15%, 50% 75%, 0 15%);
             border-radius: 0 0 4px 4px;
         }
         .env-shadow {
             position: absolute;
             top: 4px; left: 0; width: 100%; height: 85%;
-            background-color: rgba(0,0,0,0.12);
+            background-color: rgba(0,0,0,0.1); /* Sombra 3D */
             clip-path: polygon(0 0, 100% 0, 50% 100%);
             z-index: 1;
         }
         .env-top {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 85%;
-            background-color: #F4EFE6; /* Solapa superior clara */
+            background-color: #F4EFE6; /* Solapa superior (Beige claro) */
             clip-path: polygon(0 0, 100% 0, 50% 100%);
             z-index: 2;
         }
@@ -116,12 +116,12 @@
             content: '';
             position: absolute;
             top: 8px; left: 8px; right: 8px; bottom: 8px;
-            border: 1px solid #D4AF37;
+            border: 1px solid #D4AF37; /* Borde interno dorado */
             pointer-events: none;
             opacity: 0.5;
         }
         
-        /* SELLO */
+        /* SELLO DORADO/BEIGE */
         .seal {
             position: absolute;
             top: -45px;
@@ -154,7 +154,7 @@
             z-index: 1;
         }
 
-        /* TIPOGRAFÍAS Y TEXTOS */
+        /* TEXTOS Y SEPARADORES */
         .invite-text {
             font-size: 1.1em;
             letter-spacing: 3px;
@@ -253,9 +253,29 @@
             letter-spacing: 2px;
             color: #A39687;
             text-transform: uppercase;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
             font-weight: 600;
         }
+        
+        /* ESTILO PARA NOMBRES DE PADRES (Mujer arriba, hombre abajo) */
+        .parents-names {
+            font-size: 1.4em;
+            font-style: italic;
+            color: #5C4A3D;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+        .ampersand-vertical {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 0.8em;
+            color: #D4AF37;
+            display: block;
+            margin: 5px 0;
+            font-weight: 600;
+        }
+
         .info-text {
             font-size: 1.3em;
             font-style: italic;
@@ -302,7 +322,7 @@
         .gallery-title { font-family: 'Cinzel', serif; font-size: 1.6em; text-align: center; margin: 50px 0 20px; color: #8B7355; letter-spacing: 3px; }
         .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 0 20px; margin-bottom: 40px; }
         .gallery img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 8px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); border: 2px solid #fff; }
-        .footer-img { width: 100%; display: block; min-height: 150px; border-top: 5px solid #D4AF37; }
+        .footer-img { width: 100%; display: block; min-height: 150px; border-top: 5px solid #D4AF37; object-fit: cover; }
     </style>
 </head>
 <body>
@@ -359,16 +379,30 @@
                 <!-- PADRES -->
                 <div class="info-block">
                     <div class="info-title">Nuestros Padres</div>
+                    
                     <div class="info-subtitle">De la novia</div>
-                    <div class="info-text">Maria Huerta Martinez <span class="ampersand">&</span> Jorge Amador Rivas Avalos</div>
-                    <div class="info-subtitle" style="margin-top: 15px;">Del novio</div>
-                    <div class="info-text">Xochitl Hernandez Castillo <span class="ampersand">&</span> Primitivo Gonzalez Valadez</div>
+                    <div class="parents-names">
+                        Maria Huerta Martinez
+                        <span class="ampersand-vertical">&</span>
+                        Jorge Amador Rivas Avalos
+                    </div>
+                    
+                    <div class="info-subtitle">Del novio</div>
+                    <div class="parents-names">
+                        Xochitl Hernandez Castillo
+                        <span class="ampersand-vertical">&</span>
+                        Primitivo Gonzalez Valadez
+                    </div>
                 </div>
 
                 <!-- PADRINOS -->
                 <div class="info-block">
                     <div class="info-title">Nuestros Padrinos</div>
-                    <div class="info-text">Veronica Huerta Martinez <span class="ampersand">&</span> Hector Gomez Araiza</div>
+                    <div class="parents-names">
+                        Veronica Huerta Martinez
+                        <span class="ampersand-vertical">&</span>
+                        Hector Gomez Araiza
+                    </div>
                 </div>
 
                 <div class="divider"><i class="fas fa-heart"></i></div>
