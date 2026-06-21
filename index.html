@@ -115,7 +115,7 @@
             opacity: 0.5;
         }
         
-        /* SELLO DORADO/BEIGE */
+        /* NUEVO SELLO MINIMALISTA Y REALISTA (Efecto Cera Grabada) */
         .seal {
             position: absolute;
             top: -45px;
@@ -123,29 +123,44 @@
             transform: translateX(-50%);
             width: 90px;
             height: 90px;
-            background: radial-gradient(circle at 30% 30%, #FFFFFF, #F4EFE6 70%, #E8DEC8);
+            background: #E8DEC8; /* Color cera beige */
             border-radius: 50%;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15), inset 0 -3px 6px rgba(0,0,0,0.05), inset 0 3px 6px rgba(255,255,255,0.8);
+            box-shadow: 
+                0 8px 15px rgba(0,0,0,0.15), /* Sombra exterior */
+                inset 0 2px 4px rgba(255,255,255,0.8), /* Luz superior */
+                inset 0 -3px 6px rgba(0,0,0,0.1); /* Sombra inferior */
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 2px solid #D4AF37;
+            z-index: 10;
         }
         .seal::before {
             content: '';
             position: absolute;
-            width: 70px; height: 70px;
+            width: 72px; 
+            height: 72px;
             border-radius: 50%;
-            border: 1px solid rgba(212, 175, 55, 0.4);
-            box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+            background: #E8DEC8;
+            box-shadow: 
+                inset 0 4px 6px rgba(0,0,0,0.1), /* Profundidad del grabado */
+                0 2px 3px rgba(255,255,255,0.8); /* Borde iluminado */
         }
-        .seal::after {
-            content: '❀';
-            font-size: 38px;
-            color: #D4AF37;
-            text-shadow: -1px -1px 1px rgba(0,0,0,0.05), 1px 1px 1px rgba(255,255,255,0.8);
+        .seal-content {
+            font-family: 'Cinzel', serif;
+            font-size: 24px;
+            color: #8B7355; /* Dorado oscuro */
             position: relative;
             z-index: 1;
+            text-shadow: 1px 1px 1px rgba(255,255,255,0.8), -1px -1px 1px rgba(0,0,0,0.1); /* Efecto hundido */
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+        .seal-content .ampersand-seal {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.3em;
+            font-weight: normal;
+            margin-top: -5px;
         }
 
         /* TEXTOS Y SEPARADORES */
@@ -251,6 +266,9 @@
             box-shadow: 0 6px 15px rgba(0,0,0,0.1);
             margin: 35px 0;
             border: 2px solid #E8DEC8;
+        }
+        .portrait-img {
+            aspect-ratio: 4 / 5;
         }
 
         /* BLOQUES DE INFORMACIÓN */
@@ -438,7 +456,11 @@
         <!-- TARJETA PRINCIPAL -->
         <div class="card-container">
             <div class="card">
-                <div class="seal"></div>
+                
+                <!-- SELLO REALISTA GRABADO -->
+                <div class="seal">
+                    <div class="seal-content">J<span class="ampersand-seal">&</span>J</div>
+                </div>
                 
                 <div class="invite-text">Tenemos el honor de<br>invitarte a nuestra boda</div>
                 <div class="divider"><i class="fas fa-leaf"></i></div>
@@ -513,7 +535,7 @@
                     </div>
                 </div>
 
-                <!-- FOTO 7 (NUEVA POSICIÓN) -->
+                <!-- FOTO 7 -->
                 <img src="fotos/foto7.jpeg" alt="Nuestra foto" class="section-img" onerror="this.style.display='none'">
 
                 <div class="divider"><i class="fas fa-heart"></i></div>
@@ -549,7 +571,7 @@
                         <div class="vertical-text">DRESS CODE</div>
                     </div>
                     <div class="dress-right">
-                        <div class="info-title">FORMAL</div>
+                        <div class="info-title">FORMAL DE<br>PLAYA</div>
                         
                         <img src="fotos/ropa.png" alt="Ejemplo ropa" class="palette-img" onerror="this.style.display='none'">
                         
