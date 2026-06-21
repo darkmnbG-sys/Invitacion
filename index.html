@@ -32,7 +32,7 @@
         /* ENCABEZADO */
         .top-section {
             background-color: #FFFFFF;
-            padding: 40px 20px 10px;
+            padding: 50px 20px 10px;
             text-align: center;
             position: relative;
             z-index: 2;
@@ -44,14 +44,6 @@
             margin: 0 auto 20px;
             display: block;
             filter: drop-shadow(0px 2px 5px rgba(0,0,0,0.05));
-        }
-        .img-pareja {
-            width: 100%;
-            min-height: 250px;
-            display: block;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
         }
 
         /* SOBRE BEIGE 3D */
@@ -231,10 +223,14 @@
 
         /* CONTADOR */
         .countdown-title { font-family: 'Great Vibes', cursive; font-size: 3.5em; margin-bottom: 20px; color: #5C4A3D; }
-        .countdown-container { display: flex; justify-content: center; gap: 8px; margin-bottom: 30px; }
+        .countdown-container { display: flex; justify-content: center; gap: 8px; margin-bottom: 10px; }
         .time-box { background: #FFFFFF; border: 1px solid #E8DEC8; border-radius: 8px; width: 58px; padding: 10px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.03); }
         .time-box span { font-size: 2em; font-family: 'Cinzel', serif; font-weight: 600; display: block; color: #5C4A3D; }
         .time-box label { font-size: 0.6em; letter-spacing: 1px; font-family: sans-serif; color: #A39687; font-weight: bold; }
+
+        /* BOTÓN DE CONFIRMACIÓN */
+        .btn { display: inline-block; background: linear-gradient(135deg, #D4AF37, #B5952F); color: white; text-decoration: none; padding: 18px 25px; border-radius: 30px; font-size: 1em; letter-spacing: 2px; margin-top: 20px; box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3); border: 1px solid #D4AF37; font-weight: 600; transition: background 0.3s; width: 90%; box-sizing: border-box; }
+        .ticket-info { font-size: 1.05em; color: #8B7355; margin-top: 20px; margin-bottom: 40px; line-height: 1.4; font-style: italic; padding: 0 10px; }
 
         /* IMÁGENES INTERCALADAS */
         .section-img {
@@ -373,9 +369,6 @@
             text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
         }
 
-        /* BOTÓN Y FOOTER */
-        .btn { display: inline-block; background: linear-gradient(135deg, #D4AF37, #B5952F); color: white; text-decoration: none; padding: 18px 25px; border-radius: 30px; font-size: 1em; letter-spacing: 2px; margin-top: 20px; box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3); border: 1px solid #D4AF37; font-weight: 600; transition: background 0.3s; width: 90%; box-sizing: border-box; }
-        .ticket-info { font-size: 1.05em; color: #8B7355; margin-top: 20px; line-height: 1.4; font-style: italic; padding: 0 10px; }
         .thank-you { font-family: 'Great Vibes', cursive; font-size: 3em; color: #5C4A3D; margin-top: 30px; }
 
         .gallery-title { font-family: 'Cinzel', serif; font-size: 1.6em; text-align: center; margin: 50px 0 20px; color: #8B7355; letter-spacing: 3px; }
@@ -387,32 +380,9 @@
 <body>
     <div class="mobile-wrapper">
         
-        <!-- ENCABEZADO CON LOGO Y REPRODUCTOR -->
+        <!-- ENCABEZADO CON LOGO -->
         <div class="top-section">
             <img src="fotos/logo.png" alt="Logo Jazmin y Jose" class="logo-img" onerror="this.style.display='none'">
-            
-            <!-- REPRODUCTOR -->
-            <div class="player">
-                <p>DALE PLAY</p>
-                <div class="progress-bar"></div>
-                <div class="controls">
-                    <i class="fas fa-random"></i>
-                    <i class="fas fa-step-backward"></i>
-                    <i class="fas fa-play-circle play-btn" id="play-btn"></i>
-                    <i class="fas fa-step-forward"></i>
-                    <i class="fas fa-sync-alt"></i>
-                </div>
-                <audio id="bg-music" src="cancion.mp3"></audio>
-            </div>
-            
-            <!-- CONTADOR -->
-            <div class="countdown-title">Solo faltan</div>
-            <div class="countdown-container">
-                <div class="time-box"><span id="days">00</span><label>DÍAS</label></div>
-                <div class="time-box"><span id="hours">00</span><label>HRS</label></div>
-                <div class="time-box"><span id="minutes">00</span><label>MIN</label></div>
-                <div class="time-box"><span id="seconds">00</span><label>SEG</label></div>
-            </div>
         </div>
 
         <!-- SOBRE 3D -->
@@ -441,6 +411,35 @@
                     </div>
                     <div>8:30 P.M.</div>
                 </div>
+
+                <!-- REPRODUCTOR -->
+                <div class="player">
+                    <p>DALE PLAY</p>
+                    <div class="progress-bar"></div>
+                    <div class="controls">
+                        <i class="fas fa-random"></i>
+                        <i class="fas fa-step-backward"></i>
+                        <i class="fas fa-play-circle play-btn" id="play-btn"></i>
+                        <i class="fas fa-step-forward"></i>
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <audio id="bg-music" src="cancion.mp3"></audio>
+                </div>
+
+                <!-- CONTADOR -->
+                <div class="countdown-title">Solo faltan</div>
+                <div class="countdown-container">
+                    <div class="time-box"><span id="days">00</span><label>DÍAS</label></div>
+                    <div class="time-box"><span id="hours">00</span><label>HRS</label></div>
+                    <div class="time-box"><span id="minutes">00</span><label>MIN</label></div>
+                    <div class="time-box"><span id="seconds">00</span><label>SEG</label></div>
+                </div>
+
+                <!-- RSVP -->
+                <a href="https://forms.gle/RDXqBwCKf3uMwntF6" target="_blank" class="btn">CONFIRMAR ASISTENCIA</a>
+                <p class="ticket-info">Una vez confirmada su asistencia, les haremos llegar sus boletos de acceso para acompañarnos en este día tan especial.</p>
+
+                <div class="divider"><i class="fas fa-heart"></i></div>
 
                 <!-- FOTO 8 -->
                 <img src="fotos/foto8.jpeg" alt="Nuestra foto" class="section-img" onerror="this.style.display='none'">
@@ -498,10 +497,10 @@
                     </div>
                 </div>
 
-                <!-- DRESS CODE CON FOTO 4 A LA IZQUIERDA -->
+                <!-- DRESS CODE CON FOTO 6 A LA IZQUIERDA -->
                 <div class="info-block">
                     <div class="dress-code-container">
-                        <img src="fotos/foto4.jpeg" alt="Dress Code" class="dress-code-img" onerror="this.style.display='none'">
+                        <img src="fotos/foto6.jpeg" alt="Dress Code" class="dress-code-img" onerror="this.style.display='none'">
                         <div class="dress-code-text">
                             <div class="info-title">Dress Code</div>
                             <div class="info-text">Formal de playa</div>
@@ -520,20 +519,14 @@
                     <p class="info-paragraph">Tu presencia es el mejor regalo en nuestro día especial. Si además deseas darnos un obsequio podrá ser de la manera tradicional o en lluvia de sobres con efectivo.</p>
                 </div>
 
-                <!-- FOTO 6 -->
-                <img src="fotos/foto6.jpeg" alt="Nuestra foto" class="section-img" onerror="this.style.display='none'">
+                <!-- FOTO 4 -->
+                <img src="fotos/foto4.jpeg" alt="Nuestra foto" class="section-img" onerror="this.style.display='none'">
 
                 <!-- FRASE FINAL -->
                 <div class="final-quote">
                     "Toda aventura comienza con un 'sí', y el nuestro es para siempre."
                 </div>
 
-                <div class="divider"><i class="fas fa-heart"></i></div>
-
-                <!-- RSVP -->
-                <a href="https://forms.gle/RDXqBwCKf3uMwntF6" target="_blank" class="btn">CONFIRMAR ASISTENCIA</a>
-                <p class="ticket-info">Una vez confirmada su asistencia, les haremos llegar sus boletos de acceso para acompañarnos en este día tan especial.</p>
-                
                 <div class="thank-you">¡Muchas gracias!</div>
             </div>
         </div>
