@@ -32,10 +32,11 @@
         /* ENCABEZADO */
         .top-section {
             background-color: #FFFFFF;
-            padding: 50px 20px 20px;
+            padding: 50px 20px 30px;
             text-align: center;
             position: relative;
             z-index: 2;
+            border-bottom: 3px solid #D4AF37; /* Dorado */
         }
         .logo-img {
             width: 100%;
@@ -61,6 +62,23 @@
             box-shadow: 0 6px 15px rgba(0,0,0,0.08);
         }
 
+        /* REPRODUCTOR DEBAJO DE LA FOTO PRINCIPAL */
+        .player { 
+            margin: 30px auto 10px; 
+            padding: 20px 10px; 
+            background: #FAF8F5; 
+            border-radius: 10px; 
+            border: 1px solid #E8DEC8; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03); 
+        }
+        .player p { letter-spacing: 3px; margin-top: 0; margin-bottom: 15px; font-size: 1.1em; font-weight: 600; color: #8B7355; }
+        .progress-bar { width: 80%; height: 3px; background: #E8DEC8; margin: 0 auto 20px; position: relative; border-radius: 2px; }
+        .progress-bar::after { content: ''; position: absolute; left: 30%; top: -4px; width: 12px; height: 12px; background: #D4AF37; border-radius: 50%; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .progress-bar::before { content: ''; position: absolute; left: 0; top: 0; width: 30%; height: 100%; background: #D4AF37; border-radius: 2px; }
+        .controls { display: flex; justify-content: center; align-items: center; gap: 25px; font-size: 1.2em; color: #8B7355; }
+        .play-btn { font-size: 2.5em; cursor: pointer; color: #D4AF37; transition: transform 0.2s; }
+        .play-btn:active { transform: scale(0.9); }
+
         /* SOBRE BEIGE 3D */
         .css-envelope {
             position: relative;
@@ -69,7 +87,7 @@
             height: 180px;
             background-color: #DCD0C0; /* Interior del sobre (Beige oscuro) */
             z-index: 1;
-            margin: 30px auto 0;
+            margin: 40px auto 0;
             border-radius: 4px 4px 0 0;
             box-shadow: 0 10px 20px rgba(0,0,0,0.08);
         }
@@ -225,16 +243,6 @@
         .date-center .month { font-size: 1em; letter-spacing: 3px; }
         .date-center .day-num { font-size: 2.8em; line-height: 1; margin: 5px 0; font-family: 'Cinzel', serif; color: #5C4A3D; }
         .date-center .year { font-size: 0.9em; letter-spacing: 3px; }
-        
-        /* REPRODUCTOR */
-        .player { margin: 0 auto 40px; padding: 20px 10px; background: #FAF8F5; border-radius: 10px; border: 1px solid #E8DEC8; }
-        .player p { letter-spacing: 3px; margin-top: 0; margin-bottom: 15px; font-size: 1.1em; font-weight: 600; color: #8B7355; }
-        .progress-bar { width: 80%; height: 3px; background: #E8DEC8; margin: 0 auto 20px; position: relative; border-radius: 2px; }
-        .progress-bar::after { content: ''; position: absolute; left: 30%; top: -4px; width: 12px; height: 12px; background: #D4AF37; border-radius: 50%; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-        .progress-bar::before { content: ''; position: absolute; left: 0; top: 0; width: 30%; height: 100%; background: #D4AF37; border-radius: 2px; }
-        .controls { display: flex; justify-content: center; align-items: center; gap: 25px; font-size: 1.2em; color: #8B7355; }
-        .play-btn { font-size: 2.5em; cursor: pointer; color: #D4AF37; transition: transform 0.2s; }
-        .play-btn:active { transform: scale(0.9); }
 
         /* BLOQUES DE INFORMACIÓN (Padres, Dress Code, Regalos) */
         .info-block {
@@ -253,7 +261,7 @@
             letter-spacing: 2px;
             color: #A39687;
             text-transform: uppercase;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             font-weight: 600;
         }
         
@@ -333,6 +341,20 @@
             <img src="fotos/logo.png" alt="Logo Jazmin y Jose" class="logo-img" onerror="this.style.display='none'">
             <p class="quote">"Siempre tuyo, siempre mía, siempre nuestros."<br>Ludwig van Beethoven</p>
             <img src="fotos/pareja.png" alt="Jazmin y Jose" class="img-pareja" onerror="this.src='fotos/pareja.jpg'">
+            
+            <!-- REPRODUCTOR DEBAJO DE LA FOTO -->
+            <div class="player">
+                <p>DALE PLAY</p>
+                <div class="progress-bar"></div>
+                <div class="controls">
+                    <i class="fas fa-random"></i>
+                    <i class="fas fa-step-backward"></i>
+                    <i class="fas fa-play-circle play-btn" id="play-btn"></i>
+                    <i class="fas fa-step-forward"></i>
+                    <i class="fas fa-sync-alt"></i>
+                </div>
+                <audio id="bg-music" src="cancion.mp3"></audio>
+            </div>
         </div>
 
         <!-- SOBRE 3D -->
@@ -362,35 +384,19 @@
                     <div>8:30 P.M.</div>
                 </div>
 
-                <!-- REPRODUCTOR -->
-                <div class="player">
-                    <p>DALE PLAY</p>
-                    <div class="progress-bar"></div>
-                    <div class="controls">
-                        <i class="fas fa-random"></i>
-                        <i class="fas fa-step-backward"></i>
-                        <i class="fas fa-play-circle play-btn" id="play-btn"></i>
-                        <i class="fas fa-step-forward"></i>
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <audio id="bg-music" src="cancion.mp3"></audio>
-                </div>
-
                 <!-- PADRES -->
                 <div class="info-block">
                     <div class="info-title">Nuestros Padres</div>
-                    
                     <div class="info-subtitle">De la novia</div>
                     <div class="parents-names">
-                        Maria Huerta Martinez
-                        <span class="ampersand-vertical">&</span>
+                        Maria Huerta Martinez 
+                        <span class="ampersand-vertical">&</span> 
                         Jorge Amador Rivas Avalos
                     </div>
-                    
-                    <div class="info-subtitle">Del novio</div>
+                    <div class="info-subtitle" style="margin-top: 15px;">Del novio</div>
                     <div class="parents-names">
-                        Xochitl Hernandez Castillo
-                        <span class="ampersand-vertical">&</span>
+                        Xochitl Hernandez Castillo 
+                        <span class="ampersand-vertical">&</span> 
                         Primitivo Gonzalez Valadez
                     </div>
                 </div>
@@ -399,8 +405,8 @@
                 <div class="info-block">
                     <div class="info-title">Nuestros Padrinos</div>
                     <div class="parents-names">
-                        Veronica Huerta Martinez
-                        <span class="ampersand-vertical">&</span>
+                        Veronica Huerta Martinez 
+                        <span class="ampersand-vertical">&</span> 
                         Hector Gomez Araiza
                     </div>
                 </div>
