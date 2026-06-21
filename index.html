@@ -32,16 +32,17 @@
         /* ENCABEZADO */
         .top-section {
             background-color: #FFFFFF;
-            padding: 50px 20px 40px;
+            padding: 50px 20px 30px;
             text-align: center;
             position: relative;
             z-index: 2;
+            border-bottom: 3px solid #D4AF37;
         }
         .logo-img {
             width: 100%;
             max-width: 180px;
             height: auto;
-            margin: 0 auto 25px;
+            margin: 0 auto 20px;
             display: block;
             filter: drop-shadow(0px 2px 5px rgba(0,0,0,0.05));
         }
@@ -52,8 +53,6 @@
             object-fit: cover;
             border-radius: 8px;
             box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-            position: relative;
-            z-index: 2;
         }
 
         /* SOBRE BEIGE 3D */
@@ -63,10 +62,10 @@
             max-width: 440px;
             height: 180px;
             background-color: #DCD0C0;
-            z-index: 3;
-            margin: -30px auto 0; /* Sube un poco para superponerse a la foto */
+            z-index: 1;
+            margin: 40px auto 0;
             border-radius: 4px 4px 0 0;
-            box-shadow: 0 -5px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
         }
         .env-bottom {
             position: absolute;
@@ -96,7 +95,7 @@
             width: 84%;
             max-width: 400px;
             margin: -90px auto 0;
-            z-index: 4;
+            z-index: 3;
         }
         .card {
             background-color: #FFFFFF;
@@ -414,11 +413,9 @@
             margin: 40px 10px;
             line-height: 1.2;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
-            text-align: center;
         }
 
-        .thank-you { font-family: 'Great Vibes', cursive; font-size: 3em; color: #5C4A3D; margin-top: 30px; text-align: center; }
-
+        .thank-you { font-family: 'Great Vibes', cursive; font-size: 3em; color: #5C4A3D; margin-top: 30px; }
         .footer-img { width: 100%; display: block; min-height: 150px; border-top: 5px solid #D4AF37; margin-top: 40px; object-fit: cover; }
     </style>
 </head>
@@ -516,6 +513,9 @@
                     </div>
                 </div>
 
+                <!-- FOTO 7 (NUEVA POSICIÓN) -->
+                <img src="fotos/foto7.jpeg" alt="Nuestra foto" class="section-img" onerror="this.style.display='none'">
+
                 <div class="divider"><i class="fas fa-heart"></i></div>
 
                 <!-- CEREMONIA RELIGIOSA -->
@@ -540,10 +540,10 @@
                     </div>
                 </div>
 
-                <!-- DRESS CODE ESTILO REVISTA CON FOTO 6 -->
+                <!-- DRESS CODE ESTILO REVISTA CON FOTO 3 -->
                 <div class="dress-code-wrapper">
                     <div class="dress-left">
-                        <img src="fotos/foto6.jpeg" alt="Dress Code" onerror="this.style.display='none'">
+                        <img src="fotos/foto3.jpeg" alt="Dress Code" onerror="this.style.display='none'">
                     </div>
                     <div class="dress-center">
                         <div class="vertical-text">DRESS CODE</div>
@@ -551,7 +551,6 @@
                     <div class="dress-right">
                         <div class="info-title">FORMAL DE<br>PLAYA</div>
                         
-                        <!-- Opcional: Imagen de paleta de colores o ropa -->
                         <img src="fotos/ropa.png" alt="Ejemplo ropa" class="palette-img" onerror="this.style.display='none'">
                         
                         <div class="color-circles">
