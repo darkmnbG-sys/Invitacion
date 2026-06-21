@@ -12,47 +12,35 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #F9F6F0;
+            background-color: #F9F6F0; /* Beige muy claro de fondo */
             background-image: radial-gradient(#EAE0D5 1px, transparent 1px);
             background-size: 20px 20px;
             font-family: 'Cormorant Garamond', serif;
-            color: #5C4A3D;
+            color: #5C4A3D; /* Café oscuro elegante para textos */
         }
         .mobile-wrapper {
             width: 100%;
             max-width: 480px;
             margin: 0 auto;
-            background-color: #FFFFFF;
+            background-color: #FFFFFF; /* Fondo principal blanco */
             position: relative;
             box-shadow: 0 0 30px rgba(0,0,0,0.1);
             overflow-x: hidden;
             min-height: 100vh;
         }
         
-        /* ENCABEZADO */
+        /* ENCABEZADO CON LOGO DE CANVA */
         .top-section {
             background-color: #FFFFFF;
-            padding: 50px 20px 30px;
+            padding: 40px 20px 10px;
             text-align: center;
             position: relative;
             z-index: 2;
-            border-bottom: 3px solid #D4AF37;
         }
-        .logo-img {
-            width: 100%;
-            max-width: 160px;
-            height: auto;
-            margin: 0 auto 30px;
-            display: block;
-            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.05));
-        }
-        .img-pareja {
-            width: 100%;
-            min-height: 250px;
-            display: block;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+        .canva-logo-wrapper {
+            max-width: 220px; /* Tamaño elegante para el logo */
+            margin: 0 auto;
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.08));
         }
 
         /* SOBRE BEIGE 3D */
@@ -61,30 +49,30 @@
             width: 92%;
             max-width: 440px;
             height: 180px;
-            background-color: #DCD0C0;
+            background-color: #DCD0C0; /* Interior del sobre */
             z-index: 1;
-            margin: 40px auto 0;
+            margin: 20px auto 0;
             border-radius: 4px 4px 0 0;
             box-shadow: 0 10px 20px rgba(0,0,0,0.08);
         }
         .env-bottom {
             position: absolute;
             bottom: 0; left: 0; width: 100%; height: 100%;
-            background-color: #E8DEC8;
+            background-color: #E8DEC8; /* Solapa inferior */
             clip-path: polygon(0 100%, 100% 100%, 100% 15%, 50% 75%, 0 15%);
             border-radius: 0 0 4px 4px;
         }
         .env-shadow {
             position: absolute;
             top: 4px; left: 0; width: 100%; height: 85%;
-            background-color: rgba(0,0,0,0.1);
+            background-color: rgba(0,0,0,0.1); /* Sombra 3D */
             clip-path: polygon(0 0, 100% 0, 50% 100%);
             z-index: 1;
         }
         .env-top {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 85%;
-            background-color: #F4EFE6;
+            background-color: #F4EFE6; /* Solapa superior */
             clip-path: polygon(0 0, 100% 0, 50% 100%);
             z-index: 2;
         }
@@ -110,7 +98,7 @@
             content: '';
             position: absolute;
             top: 8px; left: 8px; right: 8px; bottom: 8px;
-            border: 1px solid #D4AF37;
+            border: 1px solid #D4AF37; /* Borde interno dorado */
             pointer-events: none;
             opacity: 0.5;
         }
@@ -160,7 +148,7 @@
         }
         .names {
             font-family: 'Great Vibes', cursive;
-            font-size: 4.5em;
+            font-size: 3.4em;
             margin: 15px 0;
             font-weight: normal;
             color: #5C4A3D;
@@ -240,6 +228,9 @@
             box-shadow: 0 6px 15px rgba(0,0,0,0.1);
             margin: 35px 0;
             border: 2px solid #E8DEC8;
+        }
+        .portrait-img {
+            aspect-ratio: 4 / 5; /* Para la foto principal de ustedes */
         }
 
         /* BLOQUES DE INFORMACIÓN */
@@ -354,10 +345,15 @@
 <body>
     <div class="mobile-wrapper">
         
-        <!-- ENCABEZADO -->
+        <!-- ENCABEZADO CON LOGO CANVA -->
         <div class="top-section">
-            <img src="fotos/logo.png" alt="Logo Jazmin y Jose" class="logo-img" onerror="this.style.display='none'">
-            <img src="fotos/pareja.png" alt="Jazmin y Jose" class="img-pareja" onerror="this.src='fotos/pareja.jpg'">
+            <div class="canva-logo-wrapper">
+                <div style="position: relative; width: 100%; height: 0; padding-top: 100.0000%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 0; margin-bottom: 0; overflow: hidden; border-radius: 8px; will-change: transform;">
+                  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;" src="https://www.canva.com/design/DAHNOzL-EFE/gJkY2lBfufzOSI6334FitQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+                </div>
+            </div>
+            <!-- Ocultamos el texto de Canva para mantener la elegancia -->
+            <a href="https://www.canva.com/design/DAHNOzL-EFE/gJkY2lBfufzOSI6334FitQ/view?utm_content=DAHNOzL-EFE&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener" style="display:none;">Diseño</a>
         </div>
 
         <!-- SOBRE 3D -->
@@ -407,12 +403,14 @@
                 <!-- PADRES Y PADRINOS -->
                 <div class="info-block">
                     <div class="info-title">Nuestros Padres</div>
+                    
                     <div class="info-subtitle">De la novia</div>
                     <div class="parents-names">
                         Maria Huerta Martinez 
                         <span class="ampersand-vertical">&</span> 
                         Jorge Amador Rivas Avalos
                     </div>
+                    
                     <div class="info-subtitle">Del novio</div>
                     <div class="parents-names" style="margin-bottom: 35px;">
                         Xochitl Hernandez Castillo 
@@ -428,13 +426,17 @@
                     </div>
                 </div>
 
+                <!-- FOTO PRINCIPAL -->
+                <img src="fotos/pareja.png" alt="Jazmin y Jose" class="section-img portrait-img" onerror="this.src='fotos/pareja.jpg'">
+
                 <div class="divider"><i class="fas fa-heart"></i></div>
 
                 <!-- CEREMONIA RELIGIOSA -->
                 <div class="info-block">
                     <i class="fas fa-church icon-gold"></i>
                     <div class="info-title">Ceremonia Religiosa</div>
-                    <div class="info-text">Parroquia El Expiatorio Eucarístico de Guadalajara</div>
+                    <div class="info-text">6:00 p.m.</div>
+                    <div class="info-text" style="font-size: 1.1em;">Parroquia El Expiatorio Eucarístico de Guadalajara</div>
                     <div class="map-container">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7465.797660419492!2d-103.36154202355713!3d20.67369458088825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ae0283dde105%3A0x2319ae110b6fa64e!2sParroquia%20El%20Expiatorio%20Eucar%C3%ADstico%20de%20Guadalajara!5e0!3m2!1ses-419!2sus!4v1782067922612!5m2!1ses-419!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
